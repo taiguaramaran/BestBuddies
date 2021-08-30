@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_30_181122) do
+ActiveRecord::Schema.define(version: 2021_08_30_185151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "adoptions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "animal_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["animal_id"], name: "index_adoptions_on_animal_id"
+    t.index ["user_id"], name: "index_adoptions_on_user_id"
+  end
+
+  create_table "animals", force: :cascade do |t|
+    t.string "name"
+    t.string "breed"
+    t.string "category"
+    t.string "size"
+    t.string "gender"
+    t.string "age"
+    t.bigint "user_id", null: false
+    t.bigint "partner_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["partner_id"], name: "index_animals_on_partner_id"
+    t.index ["user_id"], name: "index_animals_on_user_id"
+  end
+
+  create_table "partners", force: :cascade do |t|
+    t.string "address"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +54,19 @@ ActiveRecord::Schema.define(version: 2021_08_30_181122) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "address"
+    t.integer "age"
+    t.integer "role", default: 0
+    t.bigint "partner_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["partner_id"], name: "index_users_on_partner_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "adoptions", "animals"
+  add_foreign_key "adoptions", "users"
+  add_foreign_key "animals", "partners"
+  add_foreign_key "animals", "users"
+  add_foreign_key "users", "partners"
 end
