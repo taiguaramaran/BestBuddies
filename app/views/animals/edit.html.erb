@@ -8,8 +8,9 @@
     <%= f.input :gender %>
     <%= f.input :age, collection: ["Até seis meses", "Até 2 anos", "Até 5 anos", "Mais que 5 anos"]%>    
     <%= f.submit "Update", class: "btn btn-primary" %>
-    <%= link_to "Apagar", animal_path(@animal), method: :delete,
-        data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-    <%= link_to 'Voltar', animals_path(@animal), class:"btn btn-primary"%>
+
 
 <% end %>
+    <%= link_to "Apagar", animal_path(@animal), method: :delete,
+        data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    <%= link_to 'Voltar', animals_path, class:"btn btn-primary"%>
