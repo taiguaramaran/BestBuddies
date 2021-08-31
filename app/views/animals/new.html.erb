@@ -7,7 +7,7 @@
     <%= f.input :size %>
     <%= f.input :gender %>
     <%= f.input :age, collection: ["Até seis meses", "Até 2 anos", "Até 5 anos", "Mais que 5 anos"]%>    
-    <%= f.input :photo, as: :file %>
+    <%=  f.input :photos, as: :file, input_html: { multiple: true }%>
     <%= f.submit "Cadastrar", class: "btn btn-primary" %>
 <% end %>
           
