@@ -9,4 +9,12 @@ class PagesController < ApplicationController
   def user_profile
     @user = current_user
   end
+
+  def adopted_pets
+    @user = current_user
+    @adoption = Adoption.all
+    @user_adoption = @adoption.select do |adoption|
+      adoption.user == current_user
+    end
+  end
 end
