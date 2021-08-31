@@ -1,0 +1,13 @@
+<h1> SHOW FORM </h1>
+
+
+<p class="pb-20 my-2"><%= @animal.name %></p>
+<p class="pb-20 my-3">"<%= @animal.breed %>"</p>
+<p class="pb-20 my-3">"<%= @animal.category %>"</p>
+<p class="pb-20 my-3">"<%= @animal.size %>"</p>
+<p class="pb-20 my-3">"<%= @animal.gender %>"</p>
+<p class="pb-20 my-3">"<%= @animal.age %>"</p>
+<%= link_to 'Editar', edit_animal_path(@animal), class:"btn btn-primary"%>
+<%= link_to 'Voltar', animals_path(@animal), class:"btn btn-primary"%>
+
+

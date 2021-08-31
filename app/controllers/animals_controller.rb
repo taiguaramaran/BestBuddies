@@ -11,11 +11,11 @@ class AnimalsController < ApplicationController
   def create
     @animal = Animal.new(animal_params)
     @animal.user = current_user
-    # if @animal.save
-    #   redirect_to profile_path
-    # else
-    #   render :new
-    # end
+    if @animal.save
+      redirect_to animals_path    
+    else
+      render :new
+    end
   end
 
   def show
@@ -38,13 +38,13 @@ class AnimalsController < ApplicationController
   def destroy
     @animal = Animal.find(params[:id])
     @animal.destroy
-    redirect_to profile_path
+    redirect_to animals_path
   end
 
   private
 
   def animal_params
-    params.require(:animal).permit(:title, :author, :description, :price, :photo)
+    params.require(:animal).permit(:name, :breed, :category, :size, :gender, :age, :photo)
   end
 
 end
