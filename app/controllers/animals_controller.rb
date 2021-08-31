@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-    
+
   def index
     @animals = Animal.all
   end
@@ -12,7 +12,7 @@ class AnimalsController < ApplicationController
     @animal = Animal.new(animal_params)
     @animal.user = current_user
     if @animal.save
-      redirect_to animals_path    
+      redirect_to animals_path
     else
       render :new
     end
