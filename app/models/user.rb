@@ -11,7 +11,8 @@ class User < ApplicationRecord
   enum role: {
     user: 0,
     partner: 1,
-    employee: 2,
+    employee: 2
   }
 
+  has_one_attached :photo
 end
