@@ -1,0 +1,27 @@
+<div class="table-container mx-5">
+    <div class="col-10 mx-5">
+      <h1 class="my-4"><%="Hello, #{@user.name}. " %></h1>
+      <h3 class="my-4">Check out the pets you adopted</h3>
+
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Size</th>
+          </tr>
+        </thead>
+
+        <% @user_adoption.each do |adoption| %>
+          <tbody>
+            <tr>
+              <td><%= link_to "#{adoption.animal.name}", animal_path(adoption.animal) %></td>
+              <td><%= adoption.animal.gender %></td>
+              <td><%= adoption.animal.size %></td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+      <%= link_to 'Go back', root_path, class:'button mt-3' %>
+    </div>
+</div>
