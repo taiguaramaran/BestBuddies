@@ -1,0 +1,8 @@
+<h1>Partner</h1>
+
+<h2><%= @partner.name %></h2>
+<h4><%= @partner.address %></h4>
+
+<%= link_to "Delete partner", partner_path(@partner), method: :delete, class:'btn btn-primary' %>
+<%= link_to "Edit partner", edit_partner_path(@partner), class:'btn btn-primary' %>
+<%= link_to "Back", partners_path, class:'btn btn-primary' %>
