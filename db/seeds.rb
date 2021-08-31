@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# User.create(name: 'taiguara', address: 'rua 1', age: '32', email:'taiguaramaran@gmail.com', password:'123123')
+User.destroy_all
+Animal.destroy_all
+User.create(name: 'taiguara', address: 'rua 1', age: '32', email:'taiguaramaran@gmail.com', password:'123123')
 
 
 puts 'Creating Animal'

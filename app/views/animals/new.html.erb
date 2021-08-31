@@ -1,0 +1,13 @@
+<h1> NEW FORM </h1>
+
+<%= simple_form_for [ @animal ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :breed %>
+    <%= f.input :category %>
+    <%= f.input :size %>
+    <%= f.input :gender %>
+    <%= f.input :age %>    
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Cadastrar", class: "btn btn-primary" %>
+<% end %>
+          

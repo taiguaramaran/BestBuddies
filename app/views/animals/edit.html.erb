@@ -1,0 +1,15 @@
+<h1> EDIT FORM </h1>
+
+<%= simple_form_for [ @animal ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :breed %>
+    <%= f.input :category %>
+    <%= f.input :size %>
+    <%= f.input :gender %>
+    <%= f.input :age %>    
+    <%= f.submit "Update", class: "btn btn-primary" %>
+    <%= link_to "Apagar", animal_path(@animal), method: :delete,
+        data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    <%= link_to 'Voltar', animals_path(@animal), class:"btn btn-primary"%>
+
+<% end %>

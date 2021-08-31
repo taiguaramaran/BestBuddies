@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users do
+    resources :animals, only: [:new, :create, :update]
+  end
+
   root to: 'pages#home'
+
   resources :animals do
     resources :adoptions, only: [:create]
   end
