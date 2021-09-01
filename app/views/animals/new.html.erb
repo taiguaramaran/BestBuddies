@@ -1,13 +1,17 @@
-<h1> NEW FORM </h1>
-
-<%= simple_form_for [ @animal ] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :breed %>
-    <%= f.input :category, collection: [:CAT, :DOG] %>
-    <%= f.input :size %>
-    <%= f.input :gender %>
-    <%= f.input :age, collection: ["Até seis meses", "Até 2 anos", "Até 5 anos", "Mais que 5 anos"]%>    
-    <%=  f.input :photos, as: :file, input_html: { multiple: true }%>
-    <%= f.submit "Cadastrar", class: "btn btn-primary" %>
-<% end %>
-          
+<div class="container border rounded bg-white my-5">
+  <div class="row">
+    <div class="col">
+      <h1> NEW FORM </h1>
+      <%= simple_form_for ([ @animal ], remote: true) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :breed %>
+          <%= f.input :category, collection: [:CAT, :DOG] %>
+          <%= f.input :size %>
+          <%= f.input :gender %>
+          <%= f.input :age, collection: ["Até seis meses", "Até 2 anos", "Até 5 anos", "Mais que 5 anos"]%>
+          <%=  f.input :photos, as: :file, input_html: { multiple: true }%>
+          <%= f.submit "Cadastrar", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
