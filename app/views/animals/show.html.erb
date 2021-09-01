@@ -9,4 +9,4 @@
 <p class="pb-20 my-3">"<%= @animal.age %>"</p>
 <%= link_to 'Editar', edit_animal_path(@animal), class:"btn btn-primary"%>
 <%= link_to 'Voltar', animals_path(@animal), class:"btn btn-primary"%>
-<%= link_to "Adopt", animal_adoptions_path(@animal), method: :post, class: "btn btn-primary"  %>
+<%= link_to "Rescue", rescue_path(@animal), method: :patch, class: "btn btn-primary"  %>

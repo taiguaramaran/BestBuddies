@@ -3,7 +3,7 @@
     <div class="row d-flex align-items-center justify-content-center text-center ml-auto">
       <% @animals.each do |animal| %>
         <div class="card m-1" style="width: 18rem;">
-          <%= cl_image_tag animal.photos.first.key %>
+          <%= cl_image_tag animal.photos.first %>
           <div class="card-body">
             <h5 class="card-title"><%= animal.name %></h5>
             <p class="card-text">DESCRICAO DO ANIMAL</p>
@@ -17,6 +17,3 @@
 <% if policy(Animal).create? %>
   <%= link_to 'New', new_animal_path, class:"btn btn-primary"%>
 <% end %>
-
-
-

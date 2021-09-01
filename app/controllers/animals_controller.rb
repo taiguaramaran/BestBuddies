@@ -10,7 +10,7 @@ class AnimalsController < ApplicationController
   end
 
   def create
-    
+
     @animal = Animal.new(animal_params)
     @animal.user = current_user
     authorize @animal
@@ -46,6 +46,14 @@ class AnimalsController < ApplicationController
     @animal.destroy
     authorize @animal
     redirect_to animals_path
+  end
+
+  def rescue
+    @animal = Animal.find(params[:id])
+    @animal.partner = current_user.partner
+    authorize @animal
+    @animal.save
+    redirect_to root_path
   end
 
   private
