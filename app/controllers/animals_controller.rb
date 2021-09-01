@@ -1,7 +1,6 @@
 class AnimalsController < ApplicationController
-
   def index
-    @animals = policy_scope(Animal)
+    @animals = policy_scope(Animal).where(partner: nil)
   end
 
   def new
@@ -10,7 +9,6 @@ class AnimalsController < ApplicationController
   end
 
   def create
-
     @animal = Animal.new(animal_params)
     @animal.user = current_user
     authorize @animal
@@ -53,7 +51,7 @@ class AnimalsController < ApplicationController
     @animal.partner = current_user.partner
     authorize @animal
     @animal.save
-    redirect_to root_path
+    redirect_to animals_path
   end
 
   private

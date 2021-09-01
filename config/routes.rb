@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :adoptions, only: [:show]
 
+  get '/rescued_animals', to: 'rescued_animals#index'
+
   get '/adopted_pets', to: 'pages#adopted_pets'
   patch '/animals/:id/rescue', to: 'animals#rescue', as: :rescue
 
