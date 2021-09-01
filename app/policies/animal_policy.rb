@@ -20,5 +20,9 @@ class AnimalPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-  
+
+  def rescue?
+    return true
+  end
+
 end
