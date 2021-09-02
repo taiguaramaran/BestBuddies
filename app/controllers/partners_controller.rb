@@ -3,6 +3,10 @@ class PartnersController < ApplicationController
     @partners = policy_scope(Partner)
   end
 
+  def become_partner
+    authorize Partner
+  end
+
   def show
     @partner = Partner.find(params[:id])
     authorize @partner

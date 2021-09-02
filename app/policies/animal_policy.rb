@@ -9,6 +9,10 @@ class AnimalPolicy < ApplicationPolicy
     return true
   end
 
+  def new?
+    !user.partner.nil?
+  end
+
   def show?
     return true
   end
