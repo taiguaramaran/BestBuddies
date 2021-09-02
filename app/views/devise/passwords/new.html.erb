@@ -1,7 +1,7 @@
 <div class="container border bg-white my-5 p-5">
   <h2>Forgot your password?</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, remote: true) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">

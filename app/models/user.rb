@@ -3,9 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   has_many :animals
   has_many :adoptions
   belongs_to :partner, optional: true;
+
   validates :name, :address, :age, presence: true;
 
   enum role: {
