@@ -1,6 +1,7 @@
 class AnimalsController < ApplicationController
   def index
     @animals = policy_scope(Animal).where(partner: nil)
+    authorize Animal, :new?
   end
 
   def new
