@@ -5,14 +5,24 @@ User.destroy_all
 
 ###################USERS##################
 puts "Creating Users ..."
-User.create(name: 'Taiguara', address: 'rua 1', age: '32', email:'taiguaramaran@gmail.com', password:'123123')
-puts "Users Created !!!"
+# image_url = JSON.parse(URI.open('https://thispersondoesnotexist.com').read)
+file = URI.open('https://thispersondoesnotexist.com')
+brad = User.new(name: 'Brad Gibson', address: '9278 new road', age: 26, role: 0, email: "brad.gibson@example.com", password: "123123")
+brad.photo.attach(io: file, filename: 'person.png', content_type: 'image/png')
+brad.save!
 
+celma = User.new(name: 'Celma Mendes', address: '7706, Rua Boa Vista', age: 77, role: 1, email: "celma.mendes@example.com", password: "123123", partner: Partner.first)
+celma.photo.attach(io: file, filename: 'person.png', content_type: 'image/png')
+celma.save!
+
+bill = User.new(name: 'Bill Moreno', address: '239, Kingsway', age: 39, role: 2, email: "bill.moreno@example.com", password: "123123")
+bill.photo.attach(io: file, filename: 'person.png', content_type: 'image/png')
+bill.save!
+puts "Users Created !!!"
 
 ###################ANIMALS##################
 
 puts 'Creating Animals ...'
-
 
 image_url = JSON.parse(URI.open('https://dog.ceo/api/breeds/image/random').read)['message']
 file = URI.open(image_url)
@@ -57,6 +67,7 @@ gracie.save!
 puts 'Animals created!!!'
 
 ###################PARTNERS##################
-# puts 'Creating Partner ...'
-# Partner.create
-# puts 'Partner created !!!'
+puts 'Creating Partners ...'
+angels_bark = Partner.new(name: 'Angels Bark Dog Rescue', address: 'Beverly Hills, CA 90210')
+angels_bark.save!
+puts 'Partner created !!!'
