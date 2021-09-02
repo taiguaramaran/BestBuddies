@@ -1,6 +1,6 @@
 class Animal < ApplicationRecord
-  CATEGORIES = ["CAT", "DOG"]
-  AGES = ["Até seis meses", "Até 2 anos", "Até 5 anos", "Mais que 5 anos"]
+  CATEGORIES = ["cat", "dog"]
+  AGES = ["Up to six months old", "Up to 2 years old", "Up to 5 years old", "More than 5 years old"]
 
   has_many_attached :photos
   belongs_to :user
