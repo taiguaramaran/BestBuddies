@@ -3,15 +3,8 @@
   padding: 0;
   font-family: sans-serif;
 }
-.container-fluid {
-  background: white;
-
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100%;
-  padding: 0 0 28px 0;
-  overflow-x: hidden;
+.container-home {
+  margin: 0 10px;
 }
 .heading {
   font-size: 2.2rem;
@@ -21,17 +14,6 @@
 .sub-heading {
   font-size: 1.5rem;
 }
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  color: black;
-  backdrop-filter: blur(4px);
-  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(255, 255, 255, 0.05);
-}
-.card a {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.05);
-}
 .btn-primary {
   background-color: black !important;
   color: white !important;
@@ -39,4 +21,23 @@
 
 .btn-primary:hover {
   background-color: black !important;
+}
+
+.our-mission-container {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
+  h2 {
+    text-align: center;
+    margin: 20px;
+  }
+  .our-mission{
+    margin: 20px;
+    padding: 20px;
+    img {
+      height: 500px;
+      width: 700px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
