@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   resources :partners
+  get '/become_a_partner', to: 'partners#become_partner'
 
   resources :animals do
     resources :adoptions, only: [:create]
