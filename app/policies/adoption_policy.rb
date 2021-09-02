@@ -3,9 +3,8 @@ class AdoptionPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-
-    def create?
-      return true
-    end
+  end
+  def create?
+    true
   end
 end

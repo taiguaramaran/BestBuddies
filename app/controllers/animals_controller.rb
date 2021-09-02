@@ -48,8 +48,8 @@ class AnimalsController < ApplicationController
 
   def rescue
     @animal = Animal.find(params[:id])
-    @animal.partner = current_user.partner
     authorize @animal
+    @animal.partner = current_user.partner
     @animal.save
     redirect_to animals_path
   end
@@ -59,5 +59,4 @@ class AnimalsController < ApplicationController
   def animal_params
     params.require(:animal).permit(:name, :breed, :category, :size, :gender, :age, photos: [])
   end
-
 end
