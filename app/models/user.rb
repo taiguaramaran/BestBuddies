@@ -11,8 +11,8 @@ class User < ApplicationRecord
   validates :name, :address, :age, presence: true;
 
   enum role: {
-    user: 0,
-    partner: 1,
+    regular: 0,
+    owner: 1,
     employee: 2
   }
 

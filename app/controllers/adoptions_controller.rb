@@ -5,6 +5,7 @@ class AdoptionsController < ApplicationController
 
   def create
     @adoption = Adoption.new
+    authorize @adoption
     @animal = Animal.find(params[:animal_id])
     @adoption.animal = @animal
     @adoption.user = current_user

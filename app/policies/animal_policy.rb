@@ -22,7 +22,6 @@ class AnimalPolicy < ApplicationPolicy
   end
 
   def rescue?
-    return true
+    record.partner.nil?
   end
-
 end
