@@ -1,17 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
+
 User.destroy_all
 Animal.destroy_all
+
+###################USERS##################
+puts "Creating Users"
 User.create(name: 'taiguara', address: 'rua 1', age: '32', email:'taiguaramaran@gmail.com', password:'123123')
+puts "Users Created"
 
 
+###################ANIMALS##################
 puts 'Creating Animal'
-Animal.create(user: User.first, name: 'toto', breed: 'vira-lata', category: "cao", size: "pequeno", gender: "femea", age: "Ate 6 meses")
+Animal.create(user: User.first, name: 'Toto', breed: 'mixed', category: "dog", size: "Small", gender: "Female", age: "Up to six months old")
+Animal.create(user: User.first, name: 'Duke', breed: 'German Shepherd Dog', category: "dog", size: "Big", gender: "Male", age: "More than 5 years old")
 puts 'Animal created'
-#Animal.create(name: 'rex', breed: 'vira-lata', category: "gato", size: "pequeno", gender: "macho", age: "Ate 2 anos")
-#Animal.create(name: 'caramelo', breed: 'chihuahua', category: "cao", size: "grande", gender: "macho", age: "Ate 5 anos")
+
+###################PARTNERS##################
+puts 'Creating Partner'
+Partner.create
+puts 'Partner created'
