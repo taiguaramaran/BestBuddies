@@ -12,10 +12,15 @@ Animal.destroy_all
 ###################ANIMALS##################
 
 puts 'Creating Animal'
-toto = Animal.create(user: User.first, name: 'Toto', breed: 'mixed', category: "dog", size: "Small", gender: "Female", age: "Up to six months old")
-toto.photo.attach(io: file)
 
-Animal.create(user: User.first, name: 'Duke', breed: 'German Shepherd Dog', category: "dog", size: "Big", gender: "Male", age: "More than 5 years old")
+file = URI.open('https://dog.ceo/api/breeds/image/random')
+
+toto = Animal.create(user: User.first, name: 'Toto', breed: 'mixed', category: "dog", size: "Small", gender: "Female", age: "Up to six months old")
+toto.photo.attach(io: file, filename: 'dog.png', content_type: 'image/png')
+
+duke = Animal.create(user: User.first, name: 'Duke', breed: 'German Shepherd Dog', category: "dog", size: "Big", gender: "Male", age: "More than 5 years old")
+duke.photo.attach(io: file, filename: 'dog.png', content_type: 'image/png')
+
 puts 'Animal created'
 
 ###################PARTNERS##################
