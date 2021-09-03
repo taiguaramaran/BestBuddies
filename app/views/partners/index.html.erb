@@ -5,7 +5,3 @@
    <li> <%= link_to partner.name, partner_path(partner) %></li>
   <% end %>
 </ul>
-
-<% if policy(:partner).new? %>
-  <%#= link_to "New Partner", new_partner_path, class:'btn btn-primary' %>
-<% end %>
