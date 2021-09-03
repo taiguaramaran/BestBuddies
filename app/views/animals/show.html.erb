@@ -16,12 +16,12 @@
       <%= link_to 'Edit', edit_animal_path(@animal), class:"btn btn-flat"%>
       <%= link_to 'Back', my_animals_path(@animal), class:"btn btn-primary"%>
 
-
-      <%# <% if policy(@animal).rescue? %>
-        <%# <%= link_to "Rescue", rescue_path(@animal), method: :patch, class: "btn btn-primary" %>
-      <%# <% else %>
-        <%# <%= link_to "Adopt", animal_adoptions_path(@animal), method: :post, class: "btn btn-primary"%>
-      <%# <% end %>
+      <% if policy(@animal).rescue? %>
+        <%=  link_to "Rescue", rescue_path(@animal), method: :patch, class: "btn btn-primary" %>
+      <% elsif @animal.user == current_user %>
+      <% else %>
+       <%= link_to "Adopt", animal_adoptions_path(@animal), method: :post, class: "btn btn-primary"%>
+      <% end %>
 
     </div>
   </div>
