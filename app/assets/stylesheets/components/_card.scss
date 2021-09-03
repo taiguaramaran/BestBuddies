@@ -46,7 +46,7 @@
   top: 0;
   left: 0;
   margin-bottom: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
   z-index: 1;
 }
 
@@ -57,13 +57,13 @@
 }
 
 .card-title {
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 3px 3px 3px black;
   font-size: 0.8;
   line-height: 0.9;
 }
 
 .card-metas {
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 3px 3px 3px black;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
