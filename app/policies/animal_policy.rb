@@ -32,4 +32,12 @@ class AnimalPolicy < ApplicationPolicy
   def rescue?
     record.partner.nil?
   end
+
+  def confirmation?
+    true
+  end
+
+  def my_animals?
+    true
+  end
 end
