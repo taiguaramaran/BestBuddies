@@ -57,12 +57,13 @@
 }
 
 .card-title {
-  background-color: rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 2px black;
   font-size: 0.8;
   line-height: 0.9;
 }
 
 .card-metas {
+  text-shadow: 1px 1px 2px black;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
