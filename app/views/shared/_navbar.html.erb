@@ -19,7 +19,10 @@
           <%= link_to "Adopt a buddy", rescued_animals_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Found a buddy", new_animal_path, class: "nav-link" %>
+          <%= link_to "Help a buddy", new_animal_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Rescue a buddy", animals_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
