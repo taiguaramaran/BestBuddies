@@ -14,7 +14,7 @@ class AnimalsController < ApplicationController
     @animal.user = current_user
     authorize @animal
     if @animal.save
-      redirect_to animals_path
+      redirect_to confirmation_path
     else
       render :new
     end
@@ -53,6 +53,15 @@ class AnimalsController < ApplicationController
     @animal.partner = current_user.partner
     @animal.save
     redirect_to animals_path
+  end
+
+  def confirmation
+    authorize Animal
+  end
+
+  def my_animals
+    @animals = policy_scope(Animal).where(user: current_user)
+    authorize Animal
   end
 
   private
