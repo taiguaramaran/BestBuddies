@@ -1,0 +1,60 @@
+<% @animals.each do |animal| %>
+
+      <div class="flex-sm-3">
+
+        <div class="container-grid">
+
+          <div class="card__new">
+
+            <div class="card__header">
+
+              <%= cl_image_tag animal.photos.first.key, class: "card__image"%>
+
+              <div class="card-details">
+
+                <h2 class ="card-title"> <%= animal.name.capitalize %> </h2>
+
+                <div class="card-metas">
+
+                  <div class="meta">
+                    <% if animal.category == 'DOG' %>
+                      <i class="fas fa-dog"></i>
+                    <% else %>
+                      <i class="fas fa-cat"></i>
+                    <% end %>
+                  </div>
+
+                  <div class="meta">
+                    <% if animal.category == 'MALE' %>
+                      <i class="fas fa-mars"></i>
+                    <% else %>
+                      <i class="fas fa-venus"></i>
+                    <% end %>
+                  </div>  
+              
+
+                </div> <!--card-metas ends-->
+
+              </div> <!--card-details ends--> 
+
+            </div> <!--card__header ends-->
+
+          <div class="card__body">
+            
+            <div class="card__category"><%= animal.breed.capitalize %></div>
+
+            <div class="card__description">
+              <p><%= animal.size %></p>
+            </div>
+
+            <%= link_to 'Detalhes', animal_path(animal), class: "button-card"%>
+
+          </div> <!--card__body ends-->
+
+          </div> <!--card ends-->
+
+        </div> <!--container-grid ends-->
+
+      </div> <!--flex sm1 ends-->
+   
+    <% end %>
