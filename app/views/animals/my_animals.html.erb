@@ -1,7 +1,8 @@
 <div class="table-container mx-5">
+  <div class="row">
     <div class="col-10 mx-5">
       <h1 class="my-4"><%="Hello, #{current_user.name}. " %></h1>
-      <h3 class="my-4">Check out the pets you are helpping</h3>
+      <h3 class="my-4">These are the buddies you are helping</h3>
 
       <table class="table table-striped">
         <thead class="thead-dark">
@@ -24,4 +25,5 @@
       </table>
       <%= link_to 'Go back', root_path, class:'button mt-3' %>
     </div>
+  </div>
 </div>
