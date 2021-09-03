@@ -5,10 +5,11 @@
       <%= simple_form_for (@animal) do |f| %>
           <%= f.input :name %>
           <%= f.input :breed %>
-          <%= f.input :category, collection: [:CAT, :DOG] %>
-          <%= f.input :size %>
-          <%= f.input :gender %>
-          <%= f.input :age, collection: ["Até seis meses", "Até 2 anos", "Até 5 anos", "Mais que 5 anos"]%>
+          <%= f.input :category, collection: [:Cat, :Dog] %>
+          <%= f.input :size, collection: ['Small', 'Medium', 'Large'] %>
+          <%= f.input :gender, collection: ['Male', 'Female'] %>
+          <%= f.input :age, collection: ["Up to six months old", "Up to 2 years old", "Up to 5 years old", "More than 5 years old"]%>
+          <%= f.input :description %>
           <%=  f.input :photos, as: :file, input_html: { multiple: true }%>
           <%= f.submit "Cadastrar", class: "btn btn-primary" %>
       <% end %>

@@ -20,4 +20,8 @@ class PartnerPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def become_partner?
+    return true
+  end
 end

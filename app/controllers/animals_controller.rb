@@ -1,6 +1,7 @@
 class AnimalsController < ApplicationController
   def index
     @animals = policy_scope(Animal).where(partner: nil)
+    authorize Animal
   end
 
   def new
@@ -57,6 +58,6 @@ class AnimalsController < ApplicationController
   private
 
   def animal_params
-    params.require(:animal).permit(:name, :breed, :category, :size, :gender, :age, photos: [])
+    params.require(:animal).permit(:name, :breed, :category, :size, :gender, :age, :description, photos: [])
   end
 end
