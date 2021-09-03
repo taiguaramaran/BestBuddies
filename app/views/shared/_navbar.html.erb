@@ -19,7 +19,7 @@
           <%= link_to "Adopt a buddy", rescued_animals_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Found a buddy", new_animal_path, class: "nav-link" %>
+          <%= link_to "Help a homeless buddy", new_animal_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
@@ -29,6 +29,7 @@
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My profile", edit_user_registration_path , class: "dropdown-item" %>
+            <%= link_to "My buddies", my_animals_path , class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
