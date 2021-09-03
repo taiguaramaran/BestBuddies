@@ -1,10 +1,10 @@
 class PartnersController < ApplicationController
+  before_action :skip_authorization, only: :become_partner
   def index
     @partners = policy_scope(Partner)
   end
 
   def become_partner
-    authorize Partner
   end
 
   def show
