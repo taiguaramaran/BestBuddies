@@ -3,6 +3,13 @@ require "open-uri"
 Animal.destroy_all
 User.destroy_all
 
+###################PARTNERS##################
+puts 'Creating Partners ...'
+angels_bark = Partner.new(name: 'Angels Bark Dog Rescue', address: 'Beverly Hills, CA 90210')
+angels_bark.save!
+puts 'Partner created !!!'
+
+
 ###################USERS##################
 puts "Creating Users ..."
 file = URI.open('https://thispersondoesnotexist.com/image')
