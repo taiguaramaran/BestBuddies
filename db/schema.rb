@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2021_09_03_144515) do
     t.integer "age"
     t.integer "role", default: 0
     t.bigint "partner_id"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["partner_id"], name: "index_users_on_partner_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
