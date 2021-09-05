@@ -8,7 +8,7 @@ class Animal < ApplicationRecord
   belongs_to :user
   belongs_to :partner, optional: true
 
-  validates :photos, presence: true
+  validates  :name, :photos, presence: true
   validates :category, inclusion: { in: CATEGORIES }
   validates :age, inclusion: { in: AGES}
   validates :gender, inclusion: { in: GENDER}
