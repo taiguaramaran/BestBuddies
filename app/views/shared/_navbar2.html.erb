@@ -1,0 +1,23 @@
+  <section id="header">
+    <div class="header">
+      <div class="nav-bar">
+        <div class="brand">
+          <%= link_to root_path do %>
+          
+            <h1><span>B</span>est <span>B</span>uddies</h1>
+          <% end %>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><%= link_to "Adopt a buddy", rescued_animals_path %><li>
+            <li><%= link_to "Help a homeless buddy", new_animal_path %></li>
+            <li><%= link_to "Partners", partners_path %></li>
+            <li><%= link_to "Login", new_user_session_path %></li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+  </section>

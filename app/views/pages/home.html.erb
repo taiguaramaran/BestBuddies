@@ -1,22 +1,170 @@
-<div class="container-home">
-  <section class="home" id="home">
-      <div class="home__container bd-container bd-grid">
-        <%= render "shared/banner" %>
-          <div class="home__img">
-            <%#= image_tag "Animal-home.png"  %>
-          </div>
+  
 
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Best <span></span></h1>
+        <h1>Buddies <span></span></h1>
+        <%= link_to "Help a homeless buddy", new_animal_path, class:"cta" %>
       </div>
-  </section>
-
-  <section class="our-mission-container">
-    <h2>Our Mission</h2>
-    <div class="our-mission">
-      <%= image_tag "https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80" %>
-      <p>We're all about getting homeless pets into homes.
-         We use the power of the Internet to connect adopters with shelter pets
-         and help pets go from alone to adopted. We're working to help
-         the good people at shelters and rescue groups find homes for their pets.</p>
     </div>
   </section>
-</div>
+  <!-- End Hero Section  -->
+
+  <!-- Service Section -->
+  <section id="services">
+    <div class="services container">
+      <div class="service-top">
+        <h1 class="section-title">Adopt a <span>B</span>uddy</h1>
+        <p>Join us helping a pet find decent home to live. Adopting is an act of love, it's choosing to change the fate of an animal that would have a difficult life, it's opening your heart to those who most need your care.
+Adopting is living a beautiful experience of love and gratitude.
+</p>
+      </div>
+      <div class="service-bottom">  
+      <% @animals.last(6).each do |animal| %>
+        <div class="flex-sm-3">
+
+        <div class="container-grid">
+
+          <div class="card__new">
+
+            <div class="card__header">
+
+              <%= cl_image_tag animal.photos.first.key, class: "card__image"%>
+
+              <div class="card-details">
+
+                <h2 class ="card-title"> <%= animal.name.capitalize %> </h2>
+
+                <div class="card-metas">
+
+                  <div class="meta">
+                    <% if animal.category == 'Dog' %>
+                      <i class="fas fa-dog"></i>
+                    <% else %>
+                      <i class="fas fa-cat"></i>
+                    <% end %>
+                  </div>
+
+                  <div class="meta">
+                    <% if animal.gender == 'Male' %>
+                      <i class="fas fa-mars"></i>
+                    <% else %>
+                      <i class="fas fa-venus"></i>
+                    <% end %>
+                  </div>  
+              
+
+                </div> <!--card-metas ends-->
+
+              </div> <!--card-details ends--> 
+
+            </div> <!--card__header ends-->
+
+          <div class="card__body">
+            
+            <div class="card__category"><%= animal.breed.capitalize %></div>
+
+            <div class="card__description">
+              <p><%= animal.size %></p>
+            </div>
+
+            <%= link_to 'Meet me', animal_path(animal), class: "button-card"%>
+
+          </div> <!--card__body ends-->
+
+          </div> <!--card ends-->
+
+        </div> <!--container-grid ends-->
+
+      </div> <!--flex sm1 ends-->
+
+      <% end %>
+      </div>
+    </div>
+  </section>
+  <!-- End Service Section -->
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="projects container">
+      <div class="projects-header">
+        <h1 class="section-title">Recent <span>Adoptions</span></h1>
+      </div>
+      <div class="all-projects">
+        <% @adoptions.last(2).each do |adoption| %>
+          <div class="project-item">
+            <div class="project-info">
+              <h1><%= adoption.animal.name.capitalize %></h1>
+              <h2><%= adoption.animal.breed %></h2>
+              <p> <%= adoption.animal.description %></p>
+            </div>
+            <div class="project-img">
+              <%= cl_image_tag adoption.animal.photos.first.key%>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </section>
+  <!-- End Projects Section -->
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about container">
+      <div class="col-left">
+        <div class="about-img">
+          <%= image_tag("about.jpg")%>
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">Our <span>mission</span></h1>
+        <h2>Make your life better</h2>
+        <p> Help pets find a decent home<br>Increase the overall effectiveness of pet adoption programs<br>Raise the status of pets to family member</p>
+        <%= link_to "See our partners", partners_path, class: "cta" %>
+      </div>  
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title">Contact <span>info</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+          <div class="contact-info">
+            <h1>Phone</h1>
+            <h2>+1 234 123 1234</h2>
+            <h2>+1 234 123 1234</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h2>info@gmail.com</h2>
+            <h2>abcd@gmail.com</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+          <div class="contact-info">
+            <h1>Address</h1>
+            <h2>Fatikchhari, Chittagong, Bangladesh</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+ 
+
+ 
