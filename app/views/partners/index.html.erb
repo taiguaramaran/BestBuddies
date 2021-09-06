@@ -1,4 +1,4 @@
-<div class="container">
+<div class="header-fixed">
   <h1>Best Buddies Partners</h1>
 
 <table class="table table table-hover">
@@ -6,7 +6,10 @@
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Address</th>
-      <th scope="col">Contact</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Action</th>
+
     </tr>
   </thead>
   <tbody>
@@ -15,6 +18,7 @@
         <td><%= link_to partner.name, partner_path(partner) %></td>
         <td><%= partner.address %></td>
         <td><%= partner.phone %></td>
+        <td><button>View</button></td>
     <% end %>
     </tr>
   </tbody>
