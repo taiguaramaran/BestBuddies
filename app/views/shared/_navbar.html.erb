@@ -15,17 +15,21 @@
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Adopt a buddy", rescued_animals_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-
-          <%= link_to "Help a homeless buddy", new_animal_path, class: "nav-link" %>
-
-        </li>
-        <li class="nav-item">
-          <%= link_to "Rescue a buddy", animals_path, class: "nav-link" %>
-        </li>
+        <% if current_user.partner.nil? %>
+          <li class="nav-item">
+            <%= link_to "Adopt a buddy", rescued_animals_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Help a homeless buddy", new_animal_path, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Rescue a buddy", animals_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My Partner profile", partner_path(current_user.partner), class: "nav-link" %>
+          </li>
+        <% end %>
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
