@@ -2,7 +2,11 @@
   <div class="container">
     <h1>Best Buddies </h1>
     <p>You're about to meet someone really special.</p>
-    <%= link_to "Help a buddy", new_animal_path, class: "btn btn-blue" %>
-    <%= link_to "Adopt a buddy", rescued_animals_path, class: "btn btn-green" %>
+    <% if current_user.partner.nil? %>
+      <%= link_to "Help a buddy", new_animal_path, class: "btn btn-blue" %>
+      <%= link_to "Adopt a buddy", rescued_animals_path, class: "btn btn-green" %>
+    <% else %>
+      <%= link_to "Rescue a buddy", partner_path(current_user.partner), class: "btn btn-blue" %>
+    <% end %>
   </div>
 </div>

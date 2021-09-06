@@ -10,6 +10,9 @@ class PartnersController < ApplicationController
 
   def show
     @partner = Partner.find(params[:id])
+    @partner_animals = Animal.all.select do |animal|
+      animal.partner == @partner
+    end
     authorize @partner
   end
 
