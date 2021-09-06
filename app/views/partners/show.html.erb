@@ -1,9 +1,22 @@
-<h1>Partner</h1>
+<div class="container bg-white my-5">
+  <div class="row">
+    <div class="col">
 
-<h2><%= @partner.name %></h2>
-<h4><%= @partner.address %></h4>
+      <h1>Best Buddies Partner</h1>
 
-<%= link_to "Delete partner", partner_path(@partner), method: :delete, class:'btn btn-primary' %>
-<%= link_to "Edit partner", edit_partner_path(@partner), class:'btn btn-primary' %>
+      <h2><%= @partner.name %></h2>
+      <h4><%= @partner.address %></h4>
+      <h4><%= @partner.email %></h4>
+      <h4><%= @partner.phone %></h4>
 
-<%= link_to "Back", partners_path, class:'btn btn-primary' %>
+      <% if current_user.partner == @partner %>
+        <%= link_to "Delete", partner_path(@partner), method: :delete, class:'btn btn-red' %>
+        <%= link_to "Edit", edit_partner_path(@partner), class:'btn btn-green' %>
+        <%= link_to "Back", partners_path, class:'btn btn-orange' %>
+      <% else %>
+        <%= link_to "Back", partners_path, class:'btn btn-orange' %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
