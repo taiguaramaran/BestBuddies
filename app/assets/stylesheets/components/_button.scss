@@ -1,3 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*STANDARD*/
+
+.btn {
+  text-decoration: none;
+  padding: 30px, 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  position: relative;
+  margin: 8px;
+}
+
+/*SLIDE BUTTON*/
+
+.btn-slide{
+  color: #fff;
+  background: #000;
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+}
+
+.btn-slide::after, .btn-slide::before{
+  content: '';
+  position: absolute;
+  opacity: 0.3;
+  background: #000;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.btn-slide:hover{
+  transform: translate(-12px, -12px);
+}
+
+.btn-slide:hover::after {
+  transform: translate(6px, 6px);
+}
+
+.btn-slide:hover::before {
+  transform: translate(12px, 12px);
+}
+
+/*MIRROR BUTTON*/
+
+.btn-mirror {
+  color:#0F60C4
+}
+
+.btn-mirror::after, .btn-mirror::before {
+  border: 3px solid #000;
+  content: '';
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.btn-mirror::after {
+  transform: translate(-5px, -5px);
+}
+
+.btn-mirror::before {
+  transform: translate(5px, 5px);
+}
+
+/*OVERFLOW BUTTON*/
+
+.btn-overflow {
+  overflow: hidden;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-overflow::after {
+  content: '';
+  width: 400;
+  height: 400;
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  background-color: #ff3cac;
+  background-image: linear-overflow(225deg,
+                     #27d86c 0%,
+                     #26caf8 50%,
+                     #c625d0 100%
+  );
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+
+.btn-overflow:hover{
+  transform: translate(0, -6px);
+  box-shadow: 10px -10px 25px 0 rgba(143, 64, 248, 0.5),
+              -10px 10 25px 0 rgba(39, 200, 255, 0.5);
+}
+
+.btn-overflow::after{
+  transform: rotate(150deg);
+}
+
+//LE WAGON BUTTONS
 
 .btn-ghost {
   color: #4A4A4A;
