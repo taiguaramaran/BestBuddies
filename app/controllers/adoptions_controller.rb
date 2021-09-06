@@ -7,6 +7,9 @@ class AdoptionsController < ApplicationController
     @adoption = Adoption.new
     authorize @adoption
     @animal = Animal.find(params[:animal_id])
+    if Adoption.user_animals_adopted(current_user).include?(@animal)
+      raise
+    end
     @adoption.animal = @animal
     @adoption.user = current_user
     if @adoption.save
