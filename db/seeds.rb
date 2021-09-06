@@ -71,6 +71,9 @@ puts 'Animals created!!!'
 
 ###################PARTNERS##################
 puts 'Creating Partners ...'
-angels_bark = Partner.new(name: 'Angels Bark Dog Rescue', address: 'Beverly Hills, CA 90210')
+angels_bark = Partner.new(name: 'Angels Bark Dog Rescue',
+                          address: 'Beverly Hills, CA 90210',
+                          email: 'angelsbarkdogrescue@gmail.com',
+                          phone: '888-667-5560')
 angels_bark.save!
 puts 'Partner created !!!'
