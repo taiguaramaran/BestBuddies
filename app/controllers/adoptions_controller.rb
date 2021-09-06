@@ -8,7 +8,9 @@ class AdoptionsController < ApplicationController
     authorize @adoption
     @animal = Animal.find(params[:animal_id])
     if Adoption.user_animals_adopted(current_user).include?(@animal)
-      raise
+      flash.alert = "You have already adopted this pet."
+      redirect_to animal_path(@animal)
+      return
     end
     @adoption.animal = @animal
     @adoption.user = current_user
