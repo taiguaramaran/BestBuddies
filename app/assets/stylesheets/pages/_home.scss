@@ -601,6 +601,29 @@ p {
   #contact .contact {
     flex-direction: column;
     padding: 100px 0;
+    // =======
+    //   margin: 10px;
+    //   margin-bottom: 0;
+    // }
+
+    // .our-mission-container {
+    //   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
+    //   h2 {
+    //     text-align: center;
+    //     // margin: 20px;
+    //   }
+    //   .our-mission {
+    //     // margin: 20px;
+    //     padding: 20px;
+    //     img {
+    //       height: 500px;
+    //       width: 700px;
+    //     }
+    //     p {
+    //       width: 500px;
+    //     }
+    //     display: flex;
+    // >>>>>>> master
     align-items: center;
     justify-content: center;
     min-width: 20vh;

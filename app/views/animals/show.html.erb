@@ -13,12 +13,15 @@
       <h4 class="pb-20 my-3"><strong>Gender</strong> "<%= @animal.gender %>"</h4>
       <h4 class="pb-20 my-3"><strong>Age</strong> "<%= @animal.age %>"</h4>
       <h4 class="pb-20 my-3"><strong>Comments</strong> <em><%= @animal.description %></em></h4>
-      <%= link_to 'Edit', edit_animal_path(@animal), class:"btn btn-green"%>
       <%= link_to 'Back', my_animals_path(@animal), class:"btn btn-orange"%>
+
+      <% if (@animal.user == current_user || @animal.partner == current_user.partner) %>
+        <%= link_to 'Edit', edit_animal_path(@animal), class:"btn btn-green"%>
+      <% end %>
 
       <% if policy(@animal).rescue? %>
         <%=  link_to "Rescue", rescue_path(@animal), method: :patch, class: "btn btn-blue" %>
-      <% elsif @animal.user == current_user %>
+      <% elsif @animal.user == current_user || !current_user.partner.nil? %>
       <% else %>
        <%= link_to "Adopt", animal_adoptions_path(@animal), method: :post, class: "btn btn-green"%>
       <% end %>

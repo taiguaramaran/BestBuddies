@@ -2,28 +2,38 @@ require "open-uri"
 
 Animal.destroy_all
 User.destroy_all
+Partner.destroy_all
 
 ###################PARTNERS##################
 puts 'Creating Partners ...'
-angels_bark = Partner.new(name: 'Angels Bark Dog Rescue', address: 'Beverly Hills, CA 90210')
+angels_bark = Partner.new(name: 'Angels Bark Dog Rescue',
+                          address: 'Beverly Hills, CA 90210',
+                          email: 'angelsbarkdogrescue@gmail.com',
+                          phone: '888 667 5560')
 angels_bark.save!
+
+meow_animal_rescue = Partner.new(name: 'Meow Animal Rescue',
+                          address: 'Los Angeles, CA 90046',
+                          email: 'thecatsmeow@gmail.com',
+                          phone: '888 734 5569')
+meow_animal_rescue.save!
 puts 'Partner created !!!'
 
 
 ###################USERS##################
 puts "Creating Users ..."
 file = URI.open('https://thispersondoesnotexist.com/image')
-brad = User.new(name: 'Brad Gibson', address: '9278 new road', age: 26, role: 0, email: "brad.gibson@example.com", password: "123123")
+brad = User.new(name: 'Brad Gibson', address: '9278 new road', age: 26, role: 0, email: "brad.gibson@gmail.com", password: "123123")
 brad.photo.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
 brad.save!
 
 file = URI.open('https://thispersondoesnotexist.com/image')
-celma = User.new(name: 'Celma Mendes', address: '7706, Rua Boa Vista', age: 42, role: 1, email: "celma.mendes@example.com", password: "123123", partner: Partner.first)
+celma = User.new(name: 'Celma Mendes', address: '7706, Rua Boa Vista', age: 42, role: 1, email: "celma.mendes@animalrescue.com", password: "123123", partner: Partner.first)
 celma.photo.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
 celma.save!
 
 file = URI.open('https://thispersondoesnotexist.com/image')
-bill = User.new(name: 'Bill Moreno', address: '239, Kingsway', age: 49, role: 2, email: "bill.moreno@example.com", password: "123123")
+bill = User.new(name: 'Bill Moreno', address: '239, Kingsway', age: 49, role: 2, email: "bill.moreno@meowanimalrescue.com", password: "123123")
 bill.photo.attach(io: file, filename: 'user.jpg', content_type: 'image/jpg')
 bill.save!
 puts "Users Created !!!"
@@ -68,9 +78,3 @@ gracie.photos.attach(io: file, filename: 'cat.jpg', content_type: 'image/jpg')
 gracie.save!
 
 puts 'Animals created!!!'
-
-###################PARTNERS##################
-puts 'Creating Partners ...'
-angels_bark = Partner.new(name: 'Angels Bark Dog Rescue', address: 'Beverly Hills, CA 90210')
-angels_bark.save!
-puts 'Partner created !!!'

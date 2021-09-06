@@ -10,6 +10,9 @@ class PartnersController < ApplicationController
 
   def show
     @partner = Partner.find(params[:id])
+    @partner_animals = Animal.all.select do |animal|
+      animal.partner == @partner
+    end
     authorize @partner
   end
 
@@ -48,17 +51,10 @@ class PartnersController < ApplicationController
     end
   end
 
-  def destroy
-    @partner = Partner.find(params[:id])
-    authorize @partner
-    @partner.destroy
-
-    redirect_to partners_path
-  end
-
   private
 
   def partner_params
     params.require(:partner).permit(:name, :address)
   end
+
 end
