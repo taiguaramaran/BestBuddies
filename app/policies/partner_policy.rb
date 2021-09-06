@@ -14,10 +14,10 @@ class PartnerPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    record == user.partner
   end
 
   def destroy?
-    record.user == user
+    record == user.partner
   end
 end
