@@ -1,7 +1,22 @@
-<h1>Partners Index</h1>
+<div class="container">
+  <h1>Best Buddies Partners</h1>
 
-<ul>
-  <% @partners.each do |partner| %>
-   <li> <%= link_to partner.name, partner_path(partner) %></li>
-  <% end %>
-</ul>
+<table class="table table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Contact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @partners.each do |partner| %>
+      <tr>
+        <td><%= link_to partner.name, partner_path(partner) %></td>
+        <td><%= partner.address %></td>
+        <td><%= partner.phone %></td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -2,6 +2,7 @@ require "open-uri"
 
 Animal.destroy_all
 User.destroy_all
+Partner.destroy_all
 
 ###################PARTNERS##################
 puts 'Creating Partners ...'
