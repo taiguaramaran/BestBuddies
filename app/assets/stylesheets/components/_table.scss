@@ -26,7 +26,7 @@ td button{
   border: none;
   padding: 7px 20px;
   border-radius: 20px;
-  background-color: #FD6F96;
+  background-color: crimson;
 }
 
 td button a{
@@ -46,10 +46,10 @@ td button:hover a{
 .header-fixed thead th{
   position: sticky;
   top: 0;
-  background-color: #000;
-  color: #E6E7E8;
+  background-color: #29323c;
+  color: white;
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 ::webkit-scrollbar{
