@@ -6,7 +6,7 @@ class AnimalPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
   end
 
   def index?
@@ -18,7 +18,7 @@ class AnimalPolicy < ApplicationPolicy
   end
 
   def show?
-    return true
+    true
   end
 
   def edit?
