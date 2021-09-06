@@ -5,22 +5,22 @@
     </div>
     <div class="col">
 
-      <h1 class="mb-3"> My name is <%= @animal.name %>! </h1>
+      <h1 class="pb-20 mb-4"> My name is <%= @animal.name %>! </h1>
       <h3><strong>Facts about me</strong></h3>
       <h4 class="pb-20 my-3"><strong>Breed</strong> "<%= @animal.breed %>"</h4>
       <h4 class="pb-20 my-3"><strong>Category</strong> "<%= @animal.category %>"</h4>
       <h4 class="pb-20 my-3"><strong>Size</strong> "<%= @animal.size %>"</h4>
       <h4 class="pb-20 my-3"><strong>Gender</strong> "<%= @animal.gender %>"</h4>
       <h4 class="pb-20 my-3"><strong>Age</strong> "<%= @animal.age %>"</h4>
-      <h4 class="pb-20 my-3"><strong>Comments</strong> <%= @animal.description %> </h4>
-      <%= link_to 'Edit', edit_animal_path(@animal), class:"btn btn-flat"%>
-      <%= link_to 'Back', my_animals_path(@animal), class:"btn btn-primary"%>
+      <h4 class="pb-20 my-3"><strong>Comments</strong> <em><%= @animal.description %></em></h4>
+      <%= link_to 'Edit', edit_animal_path(@animal), class:"btn btn-green"%>
+      <%= link_to 'Back', my_animals_path(@animal), class:"btn btn-orange"%>
 
       <% if policy(@animal).rescue? %>
-        <%=  link_to "Rescue", rescue_path(@animal), method: :patch, class: "btn btn-primary" %>
+        <%=  link_to "Rescue", rescue_path(@animal), method: :patch, class: "btn btn-blue" %>
       <% elsif @animal.user == current_user %>
       <% else %>
-       <%= link_to "Adopt", animal_adoptions_path(@animal), method: :post, class: "btn btn-primary"%>
+       <%= link_to "Adopt", animal_adoptions_path(@animal), method: :post, class: "btn btn-green"%>
       <% end %>
 
     </div>
