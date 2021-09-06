@@ -10,7 +10,6 @@
       <h4><%= @partner.phone %></h4>
 
       <% if current_user.partner == @partner %>
-        <%= link_to "Delete", partner_path(@partner), method: :delete, class:'btn btn-red' %>
         <%= link_to "Edit", edit_partner_path(@partner), class:'btn btn-green' %>
         <%= link_to "Back", partners_path, class:'btn btn-orange' %>
       <% else %>

@@ -1,14 +1,13 @@
-<div class="container">
+<div class="container bg-white">
   <div class="row">
     <div class="col">
-      <h1>Edit Partner</h1>
-      <%= simple_form_for [@partner] do |f| %>
+      <h1>Edit Partner Profile</h1>
+      <%= simple_form_for @partner do |f| %>
         <%= f.input :name %>
         <%= f.input :address %>
         <%= f.input :email %>
         <%= f.input :phone %>
-        <%= f.submit %>
-        <% end %>
+        <%= f.submit class: "btn btn-green"%>
       <% end %>
     </div>
   </div>
