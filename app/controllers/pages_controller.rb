@@ -2,8 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @nimals = Animal.all.first(6)
-    @animals_rand = Animal.all.sample(3)
+    @animals = Animal.where.not(partner: nil)
+    @adoptions = Adoption.all.order(:created_at)
   end
 
   def user_profile
