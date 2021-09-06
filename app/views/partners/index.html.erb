@@ -1,26 +1,27 @@
-<div class="header-fixed">
+<div class="container">
   <h1>Best Buddies Partners</h1>
-
-<table class="table table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Address</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Action</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <% @partners.each do |partner| %>
-      <tr>
-        <td><%= link_to partner.name, partner_path(partner) %></td>
-        <td><%= partner.address %></td>
-        <td><%= partner.phone %></td>
-        <td><button>View</button></td>
-    <% end %>
-    </tr>
-  </tbody>
-</table>
+  <div class="header-fixed">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @partners.each do |partner| %>
+          <tr>
+            <td><%= partner.name %></td>
+            <td><%= partner.address %></td>
+            <td><%= partner.email %></td>
+            <td><%= partner.phone %></td>
+            <td><button><%= link_to 'View', partner_path(partner) %></button></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
