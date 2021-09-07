@@ -93,12 +93,12 @@ gracie = Animal.new(user: User.first, name: 'Gracie', breed: 'Domestic',
   gracie.photos.attach(io: file, filename: 'cat.jpg', content_type: 'image/jpg')
   gracie.save!
 
-file = URI.open('https://pet-uploads.adoptapet.com/e/a/6/477702222.jpg')
-gracie = Animal.new(user: User.first, name: 'Nyx', breed: 'Domestic',
-                    category: "Cat", size: "Small", gender: "Female",
-                    age: "Up to 6 months old", description: "Nyx is a black domestic short hair cat.
-                    She is a very loving cat when she gets comfortable around you.", partner: Partner.last)
-Nyx.photos.attach(io: file, filename: 'cat.jpg', content_type: 'image/jpg')
-Nyx.save!
+file = URI.open('https://pet-uploads.adoptapet.com/d/8/0/484736670.jpg')
+nyx = Animal.new(user: User.first, name: 'Nyx', breed: 'Domestic',
+                 category: "Cat", size: "Small", gender: "Female",
+                 age: "Up to 6 months old", description: "Nyx is a black domestic short hair cat.
+                 She is a very loving cat when she gets comfortable around you.", partner: Partner.last)
+nyx.photos.attach(io: file, filename: 'cat.jpg', content_type: 'image/jpg')
+nyx.save!
 
 puts 'Animals created!!!'
