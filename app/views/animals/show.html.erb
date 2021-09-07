@@ -13,7 +13,11 @@
       <h4 class="pb-20 my-3"><strong>Gender</strong> "<%= @animal.gender %>"</h4>
       <h4 class="pb-20 my-3"><strong>Age</strong> "<%= @animal.age %>"</h4>
       <h4 class="pb-20 my-3"><strong>Comments</strong> <em><%= @animal.description %></em></h4>
-      <%= link_to 'Back', my_animals_path(@animal), class:"btn btn-orange"%>
+      <% if current_user.partner.nil? %>
+        <%= link_to 'My animals', my_animals_path(@animal), class:"btn btn-orange"%>
+      <% else %>
+        <%= link_to 'Back', root_path, class:"btn btn-orange"%>
+      <% end %>
 
       <% if (@animal.user == current_user || @animal.partner == current_user.partner) %>
         <%= link_to 'Edit', edit_animal_path(@animal), class:"btn btn-green"%>

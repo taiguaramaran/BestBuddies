@@ -22,7 +22,7 @@ class AnimalPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    record.user == user || record.partner == user.partner
   end
 
   def destroy?
