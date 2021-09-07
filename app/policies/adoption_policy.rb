@@ -7,4 +7,7 @@ class AdoptionPolicy < ApplicationPolicy
   def create?
     true
   end
+  def adoption_confirmation?
+    true
+  end
 end
