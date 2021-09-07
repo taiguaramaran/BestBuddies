@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :adoptions, only: [:show]
 
-  get '/rescued_animals', to: 'rescued_animals#index'
+  get '/rescued_animals', to: 'rescued_animals#rescued_animals', as: :rescued_animals
 
   get '/adopted_pets', to: 'pages#adopted_pets'
   patch '/animals/:id/rescue', to: 'animals#rescue', as: :rescue

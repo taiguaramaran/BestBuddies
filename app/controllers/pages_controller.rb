@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   def adopted_pets
     @user = current_user
     @adoption = Adoption.all
+    authorize Animal, :adopted_pets?
     @user_adoption = @adoption.select do |adoption|
       adoption.user == current_user
     end
