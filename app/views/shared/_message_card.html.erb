@@ -1,18 +1,22 @@
-
-<div class="message-card">
-  <div class="message-card-content">
-      <h2 class="message-card-title">
-        Thank you!
-      </h2>
-      <p class="message-card-body">
-        You are helping a buddy to find a new home. <br>
-        Our partners will get in touch with you soon.<br/>
-        If you want to know more about our rescue/adoption process, <br>
-        just click on the link below. <br>
-        Also, feel free to visit your buddy's profile page if you like.
-      </p>
-      <%= link_to "Learn More", root_path, class:"message-card-button"%>
-      <%= link_to "Visit Profile", my_animals_path, class:"message-card-button"%>
+<div class="container">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="message-card">
+        <div class="message-card-content">
+            <h2 class="message-card-title">
+            Thank you!
+            </h2>
+            <p class="message-card-body">
+              Our team will contact you soon.<br/>
+              If you want to know more about our rescue/adoption process, <br>
+              just click on the link below.
+              Also, feel free to visit your buddy's profile page.
+            </p>
+            <%= link_to "Learn More", root_path, class:"message-card-button"%>
+            <%= link_to "Visit Profile", my_animals_path, class:"message-card-button"%>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
