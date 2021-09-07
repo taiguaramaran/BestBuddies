@@ -13,7 +13,6 @@
       <p class="pb-20 my-3"><strong>Gender</strong> "<%= @animal.gender %>"</p>
       <p class="pb-20 my-3"><strong>Age</strong> "<%= @animal.age %>"</p>
       <p class="pb-20 my-3"><strong>Comments</strong> <em><%= @animal.description %></em></p>
-      <p class="pb-20 my-3"><strong>Rescued by:</strong> <em><%= @animal.partner.name %></em></p>
       <div class="links">
 
         <% if current_user.partner.nil? %>
