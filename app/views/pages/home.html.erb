@@ -7,7 +7,15 @@
       <div>
         <h1>Best <span></span></h1>
         <h1>Buddies <span></span></h1>
-        <%= link_to "Help a homeless buddy", new_animal_path, class:"cta" %>
+        <% if user_signed_in? %>
+          <% if current_user.partner.nil? %>
+            <%= link_to "Help a homeless buddy", new_animal_path, class:"cta" %>
+          <% else %>
+            <%= link_to "Rescue a buddy", animals_path, class:"cta" %>
+          <% end %>
+        <% else %>
+            <%= link_to "Help a homeless buddy", new_animal_path, class:"cta" %>
+        <% end %>
       </div>
     </div>
   </section>
