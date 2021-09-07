@@ -14,9 +14,11 @@
 
 
         <% end %>
-          <%= link_to "Apagar", animal_path(@animal), method: :delete,
-              data: { confirm: "Are you sure?" }, class: "btn btn-red" %>
-          <%= link_to 'Voltar', animals_path, class:"btn btn-orange"%>
+          <% if @animal.partner.nil? %>
+            <%= link_to "Delete", animal_path(@animal), method: :delete,
+                data: { confirm: "Are you sure?" }, class: "btn btn-red" %>
+          <% end %>
+          <%= link_to 'Back', animals_path, class:"btn btn-orange"%>
     </div>
   </div>
 </div>
