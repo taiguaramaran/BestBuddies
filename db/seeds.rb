@@ -92,8 +92,8 @@ figaro.save!
 file = URI.open('https://pet-uploads.adoptapet.com/e/a/6/477702222.jpg')
 gracie = Animal.new(user: User.first, name: 'Gracie', breed: 'Domestic',
   category: "Cat", size: "Small", gender: "Female",
-  age: "Up to 2 years old", description: "Fig is an amazing cat with a lot of spunk.
-  He needs someone who can give him lots of attention and love.", partner: Partner.last)
+  age: "Up to 2 years old", description: "Gracie loves to explore and play. She also loves to cuddle A LOT.
+  She is a talkative young lady and really enjoys affection.", partner: Partner.last)
   gracie.photos.attach(io: file, filename: 'cat.jpg', content_type: 'image/jpg')
   gracie.save!
 
