@@ -1,8 +1,8 @@
 require "open-uri"
 
-Animal.destroy_all
-User.destroy_all
 Partner.destroy_all
+User.destroy_all
+Animal.destroy_all
 
 ###################PARTNERS##################
 puts 'Creating Partners ...'
@@ -43,7 +43,9 @@ puts "Users Created !!!"
 puts 'Creating Animals ...'
 
 file = URI.open('https://pet-uploads.adoptapet.com/7/7/b/567228639.jpg')
-toto = Animal.new(user: User.first, name: 'Toto', breed: 'Mixed', category: "Dog", size: "Small", gender: "Female", age: "Up to six months old", description: "You'll fall in love with it!")
+toto = Animal.new(user: User.first, name: 'Toto', breed: 'Mixed', category: "Dog",
+                  size: "Small", gender: "Female", age: "Up to six months old",
+                  description: "Toto is the friend you need!")
 toto.photos.attach(io: file, filename: 'dog.jpg', content_type: 'image/jpg')
 toto.save!
 
@@ -57,7 +59,9 @@ duke.photos.attach(io: file, filename: 'dog.jpg', content_type: 'image/jpg')
 duke.save!
 
 file = URI.open('https://pet-uploads.adoptapet.com/9/7/6/567226320.jpg')
-lacey = Animal.new(user: User.first, name: 'Lacey', breed: 'Chihuahua/French Bulldog Mix', category: "Dog", size: "Small", gender: "Female", age: "Up to six months old", description: "You'll fall in love with it!")
+lacey = Animal.new(user: User.first, name: 'Lacey', breed: 'Chihuahua/French Bulldog Mix',
+                   category: "Dog", size: "Small", gender: "Female", age: "Up to six months old",
+                   description: "She is one of those dogs that just loves to be at her person's side.")
 lacey.photos.attach(io: file, filename: 'dog.jpg', content_type: 'image/jpg')
 lacey.save!
 
@@ -96,7 +100,7 @@ gracie = Animal.new(user: User.first, name: 'Gracie', breed: 'Domestic',
 file = URI.open('https://pet-uploads.adoptapet.com/d/8/0/484736670.jpg')
 nyx = Animal.new(user: User.first, name: 'Nyx', breed: 'Domestic',
                  category: "Cat", size: "Small", gender: "Female",
-                 age: "Up to 6 months old", description: "Nyx is a black domestic short hair cat.
+                 age: "Up to six months old", description: "Nyx is a black domestic short hair cat.
                  She is a very loving cat when she gets comfortable around you.", partner: Partner.last)
 nyx.photos.attach(io: file, filename: 'cat.jpg', content_type: 'image/jpg')
 nyx.save!
