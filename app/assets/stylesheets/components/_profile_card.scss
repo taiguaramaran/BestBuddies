@@ -1,6 +1,6 @@
 .box {
   width: 80%;
-  height: 500px;
+  height: fit-content;
   display: inline-block;
   margin: 50px 10%;
   box-shadow: 0 27px 87px rgba(0, 0, 0, 0.37);
@@ -16,7 +16,7 @@
 .box-text {
   width: 45%;
   float: left;
-  padding: 0px 0px 0px 35px;
+  padding: 20px 70px 20px 35px;
 }
 
 .box-text h1{

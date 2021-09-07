@@ -5,6 +5,7 @@
     </div>
     <div class="box-text">
       <h1 class="pb-20 mb-4"><%= @animal.name %>! </h1>
+      <hr>
       <h3><strong>Facts about me</strong></h3>
       <p class="pb-20 my-3"><strong>Breed</strong> "<%= @animal.breed %>"</p>
       <p class="pb-20 my-3"><strong>Category</strong> "<%= @animal.category %>"</p>
@@ -12,6 +13,7 @@
       <p class="pb-20 my-3"><strong>Gender</strong> "<%= @animal.gender %>"</p>
       <p class="pb-20 my-3"><strong>Age</strong> "<%= @animal.age %>"</p>
       <p class="pb-20 my-3"><strong>Comments</strong> <em><%= @animal.description %></em></p>
+      <p class="pb-20 my-3"><strong>Rescued by:</strong> <em><%= @animal.partner.name %></em></p>
       <div class="links">
 
         <% if current_user.partner.nil? %>
