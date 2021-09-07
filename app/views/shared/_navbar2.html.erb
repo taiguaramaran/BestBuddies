@@ -3,7 +3,7 @@
       <div class="nav-bar">
         <div class="brand">
           <%= link_to root_path do %>
-          
+
             <h1><span>B</span>est <span>B</span>uddies</h1>
           <% end %>
         </div>
@@ -12,12 +12,49 @@
             <div class="bar"></div>
           </div>
           <ul>
-            <li><%= link_to "Adopt a buddy", rescued_animals_path %><li>
-            <li><%= link_to "Help a homeless buddy", new_animal_path %></li>
-            <li><%= link_to "Partners", partners_path %></li>
-            <li><%= link_to "Login", new_user_session_path %></li>
+            <% if user_signed_in? %>
+            <li class="nav-item active">
+              <%= link_to "Home", root_path, class: "nav-link" %>
+            </li>
+            <% if current_user.partner.nil? %>
+              <li class="nav-item">
+                <%= link_to "Adopt a buddy", rescued_animals_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Help a homeless buddy", new_animal_path, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Rescue a buddy", animals_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "My Partner profile", partner_path(current_user.partner), class: "nav-link" %>
+              </li>
+            <% end %>
+            <li class="nav-item dropdown">
+              <% if current_user.photo.attached? %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <%= cl_image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% end %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "My profile", edit_user_registration_path , class: "dropdown-item" %>
+                <% if current_user.partner.nil? %>
+                  <%= link_to "My buddies", my_animals_path , class: "dropdown-item" %>
+                <% end %>
+                <% if current_user.partner.nil? %>
+                  <%= link_to "My adoptions", adopted_pets_path , class: "dropdown-item" %>
+                <% end %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+      <% end %>
           </ul>
-        </div>  
+        </div>
       </div>
     </div>
   </section>
