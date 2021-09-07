@@ -6,6 +6,7 @@
 
 
 .message-card {
+  margin: 40vh;
   color: var(--clr-neutral-100);
   background-image: image-url('message-card-bg.jpg');
   background-size: cover;
@@ -27,7 +28,7 @@
 }
 
 .message-card-body{
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--clr-neutral-100);
 }
 
 .message-card-title{
