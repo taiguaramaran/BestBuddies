@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get 'confirmation', to: 'animals#confirmation'
+  get 'adoption_confirmation', to: 'adoptions#adoption_confirmation'
   get 'my_animals', to: 'animals#my_animals'
 
   resources :adoptions, only: [:show]

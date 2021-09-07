@@ -15,9 +15,13 @@ class AdoptionsController < ApplicationController
     @adoption.animal = @animal
     @adoption.user = current_user
     if @adoption.save
-      redirect_to adopted_pets_path
+      redirect_to adoption_confirmation_path
     else
       redirect_to animal_path(@animal)
     end
+  end
+
+  def adoption_confirmation
+    authorize Adoption
   end
 end
