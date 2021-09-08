@@ -3,9 +3,4 @@ class RescuedAnimalsController < ApplicationController
     @animals = policy_scope(Animal).where.not(partner: nil)
     authorize Animal, :rescued_animals?
   end
-
-  # def show
-  #   @animal = user.partner.animal
-  #   authorize @animal
-  # end
 end
