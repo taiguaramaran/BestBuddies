@@ -8,7 +8,7 @@
       <h3 class="mb-3"><%= @partner.email %></h3>
       <h3 class="mb-3"><%= @partner.phone %></h3>
 
-      <% if current_user.partner == @partner %>
+      <% if @partner == current_user.partner %>
         <%= link_to "Edit", edit_partner_path(@partner), class:'btn btn-green' %>
         <%= link_to "Back", partners_path, class:'btn btn-orange' %>
       <% else %>
