@@ -8,7 +8,7 @@
       <h3 class="mb-3"><%= @partner.email %></h3>
       <h3 class="mb-3"><%= @partner.phone %></h3>
 
-      <% if current_user.partner == @partner %>
+      <% if @partner == current_user.partner %>
         <%= link_to "Edit", edit_partner_path(@partner), class:'btn btn-green' %>
         <%= link_to "Back", partners_path, class:'btn btn-orange' %>
       <% else %>
@@ -26,7 +26,9 @@
                   <th scope="col">Name</th>
                   <th scope="col">Gender</th>
                   <th scope="col">Size</th>
-                  <th scope="col">Action</th>
+                  <% if @partner == current_user.partner %>
+                    <th scope="col">Action</th>
+                  <% end %>
                 </tr>
               </thead>
 
@@ -36,7 +38,9 @@
                     <td><%="#{animal.name}"%></td>
                     <td><%= animal.gender %></td>
                     <td><%= animal.size %></td>
-                    <td><button><%= link_to 'View', animal_path(animal) %></button></td>
+                    <% if @partner == current_user.partner %>
+                      <td><button><%= link_to 'View', animal_path(animal) %></button></td>
+                    <% end %>
                   </tr>
                 </tbody>
               <% end %>
