@@ -12,7 +12,7 @@
               just click on the link below.
               Also, feel free to visit your buddies page.
             </p>
-            <%= link_to "Learn More", root_path, class:"message-card-button"%>
+            <%= link_to "Learn More", know_more_path, class:"message-card-button"%>
             <% if current_user.partner.nil? %>
               <%= link_to "See my buddies", my_animals_path, class:"message-card-button"%>
             <% else %>
