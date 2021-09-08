@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="message-card">
+        <div class="message-card-content">
+            <h2 class="message-card-title">
+            Thank you!
+            </h2>
+            <p class="message-card-body">
+              Our team will contact you soon.<br/>
+              If you want to know more about our rescue/adoption process, <br>
+              just click on the link below.
+              Also, feel free to visit your buddies page.
+            </p>
+            <%= link_to "Learn More", root_path, class:"message-card-button"%>
+            <% if current_user.partner.nil? %>
+              <%= link_to "See my buddies", my_animals_path, class:"message-card-button"%>
+            <% else %>
+              <%= link_to "Visit Profile", partner_path(current_user.partner), class:"message-card-button"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

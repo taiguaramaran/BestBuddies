@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="message-card">
+        <div class="message-card-content">
+            <h2 class="message-card-title">
+            Thank you!
+            </h2>
+            <p class="message-card-body">
+              Our team will contact you soon.<br/>
+              If you want to know more about our rescue/adoption process, <br>
+              just click on the link below.
+              Also, feel free to visit your adoptions page.
+            </p>
+            <%= link_to "Learn More", root_path, class:"message-card-button"%>
+            <%= link_to "Visit adoptions", adopted_pets_path, class:"message-card-button"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

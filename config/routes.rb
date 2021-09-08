@@ -11,11 +11,12 @@ Rails.application.routes.draw do
   end
 
   get 'confirmation', to: 'animals#confirmation'
+  get 'adoption_confirmation', to: 'adoptions#adoption_confirmation'
   get 'my_animals', to: 'animals#my_animals'
 
   resources :adoptions, only: [:show]
 
-  get '/rescued_animals', to: 'rescued_animals#index'
+  get '/rescued_animals', to: 'rescued_animals#rescued_animals'
 
   get '/adopted_pets', to: 'pages#adopted_pets'
   patch '/animals/:id/rescue', to: 'animals#rescue', as: :rescue

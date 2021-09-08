@@ -30,24 +30,24 @@
                     <% else %>
                       <i class="fas fa-venus"></i>
                     <% end %>
-                  </div>  
-              
+                  </div>
+
 
                 </div> <!--card-metas ends-->
 
-              </div> <!--card-details ends--> 
+              </div> <!--card-details ends-->
 
             </div> <!--card__header ends-->
 
           <div class="card__body">
-            
+
             <div class="card__category"><%= animal.breed.capitalize %></div>
 
             <div class="card__description">
               <p><%= animal.size %></p>
             </div>
 
-            <%= link_to 'Detalhes', animal_path(animal), class: "button-card"%>
+            <%= link_to 'More', animal_path(animal), class: "button-card"%>
 
           </div> <!--card__body ends-->
 
@@ -56,5 +56,5 @@
         </div> <!--container-grid ends-->
 
       </div> <!--flex sm1 ends-->
-   
+
     <% end %>

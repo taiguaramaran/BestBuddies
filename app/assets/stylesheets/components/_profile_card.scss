@@ -1,0 +1,36 @@
+.box {
+  width: 80%;
+  height: fit-content;
+  display: inline-block;
+  margin: 50px 10%;
+  box-shadow: 0 27px 87px rgba(0, 0, 0, 0.37);
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.box-img {
+  width: 55%;
+  float: left;
+}
+
+.box-text {
+  width: 45%;
+  float: left;
+  padding: 20px 70px 20px 35px;
+}
+
+.box-text h1{
+  font-size: 48px;
+  font-weight: bold;
+  color: #2e2e2e;
+  margin-bottom: 45px;
+}
+
+.box-text p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #2e2e2e;
+  line-height: 30px;
+  letter-spacing: 0.25px;
+  margin-bottom: 15px;
+}

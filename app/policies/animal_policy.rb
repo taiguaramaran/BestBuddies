@@ -6,7 +6,7 @@ class AnimalPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.partner.nil?
   end
 
   def index?
@@ -14,7 +14,7 @@ class AnimalPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    create?
   end
 
   def show?
@@ -22,7 +22,7 @@ class AnimalPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    record.user == user || record.partner == user.partner
   end
 
   def destroy?
@@ -38,6 +38,14 @@ class AnimalPolicy < ApplicationPolicy
   end
 
   def my_animals?
-    true
+    create?
+  end
+
+  def rescued_animals?
+    user.partner.nil?
+  end
+
+  def adopted_pets?
+    user.partner.nil?
   end
 end

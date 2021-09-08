@@ -1,15 +1,14 @@
-<div class="container my-5">
+<div class="partner-container mt-5">
   <div class="row align-items-center">
     <div class="col bg-white mx-3">
 
-      <h1>Best Buddies Partner</h1>
+      <h1><%= @partner.name %></h1>
 
-      <h2><%= @partner.name %></h2>
-      <h4><%= @partner.address %></h4>
-      <h4><%= @partner.email %></h4>
-      <h4><%= @partner.phone %></h4>
+      <h3 class="mb-3"><%= @partner.address %></h3>
+      <h3 class="mb-3"><%= @partner.email %></h3>
+      <h3 class="mb-3"><%= @partner.phone %></h3>
 
-      <% if current_user.partner == @partner %>
+      <% if @partner == current_user.partner %>
         <%= link_to "Edit", edit_partner_path(@partner), class:'btn btn-green' %>
         <%= link_to "Back", partners_path, class:'btn btn-orange' %>
       <% else %>
@@ -18,17 +17,18 @@
 
     </div>
     <div class="col">
-      <div class="container my-5">
+      <div class="table-partners-container my-5">
         <div class="row">
           <div class="col-10 mx-5">
-            <h2>Rescued Animals</h2>
             <table class="table table-striped">
               <thead class="thead-dark">
                 <tr>
                   <th scope="col">Name</th>
                   <th scope="col">Gender</th>
                   <th scope="col">Size</th>
-                  <th scope="col">Action</th>
+                  <% if @partner == current_user.partner %>
+                    <th scope="col">Action</th>
+                  <% end %>
                 </tr>
               </thead>
 
@@ -38,7 +38,9 @@
                     <td><%="#{animal.name}"%></td>
                     <td><%= animal.gender %></td>
                     <td><%= animal.size %></td>
-                    <td><button><%= link_to 'View', animal_path(animal) %></button></td>
+                    <% if @partner == current_user.partner %>
+                      <td><button><%= link_to 'View', animal_path(animal) %></button></td>
+                    <% end %>
                   </tr>
                 </tbody>
               <% end %>
