@@ -30,4 +30,3 @@ import {initMenu} from '../menu/init_menu';
 document.addEventListener('turbolinks:load', () => {
     initMenu()
 });
-
