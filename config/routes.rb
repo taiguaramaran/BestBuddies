@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get '/adopted_pets', to: 'pages#adopted_pets'
   patch '/animals/:id/rescue', to: 'animals#rescue', as: :rescue
+  get '/know_more', to: 'pages#know_more'
 
   root to: 'pages#home'
 
