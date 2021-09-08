@@ -1,9 +1,9 @@
 <div class="container border rounded bg-white my-5">
   <div class="row">
     <div class="col">
-      <h1> Register your Buddy </h1>
+      <h1> Complete your buddy's profile </h1>
       <%= simple_form_for (@animal) do |f| %>
-          <%= f.input :name %>
+          <strong><%= f.input :name %></strong>
           <%= f.input :breed %>
           <%= f.input :category, collection: [:Cat, :Dog]%>
           <%= f.input :size, collection: ['Small', 'Medium', 'Large'] %>
