@@ -105,7 +105,7 @@ nyx = Animal.new(user: User.last, name: 'Nyx', breed: 'Domestic',
 nyx.photos.attach(io: file, filename: 'cat.jpg', content_type: 'image/jpg')
 nyx.save!
 
-file = URI.open('https://pet-uploads.adoptapet.com/8/8/f/442558865.jpg')
+file = URI.open('https://pet-uploads.adoptapet.com/d/7/8/442558877.jpg')
 liz_taylor = Animal.new(user: User.last, name: 'Liz_taylor', breed: 'Domestic Shorthair',
                         category: "Cat", size: "Medium", gender: "Female",
                         age: "Up to 2 years old", description: " Like most celebrities,
