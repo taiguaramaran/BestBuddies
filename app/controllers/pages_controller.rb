@@ -18,4 +18,7 @@ class PagesController < ApplicationController
       adoption.user == current_user
     end
   end
+
+  def know_more
+  end
 end
