@@ -15,7 +15,7 @@ a {
 a:hover {
   text-decoration: none;
 }
-.container-home {
+.container {
   min-height: 100vh;
   width: 100%;
   //display: flex;
@@ -26,9 +26,9 @@ a:hover {
 .container-home {
   min-height: 100vh;
   width: 100%;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 img {
@@ -78,6 +78,7 @@ p {
   font-size: 3rem;
   text-transform: uppercase;
   color: white;
+  margin: auto;
 }
 .brand h1 span {
   color: crimson;
@@ -338,6 +339,11 @@ p {
 }
 
 .flex-sm-3 {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-sm-4 {
   display: flex;
   justify-content: center;
 }
@@ -686,7 +692,7 @@ p {
     display: inline-block;
   }
   #header .nav-list ul li a {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
   #header .nav-list ul a:after {
     display: none;
