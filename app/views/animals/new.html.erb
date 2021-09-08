@@ -5,7 +5,7 @@
       <%= simple_form_for (@animal) do |f| %>
           <%= f.input :name %>
           <%= f.input :breed %>
-          <%= f.input :category, collection: [:Cat, :Dog], class: 'select2' %>
+          <%= f.input :category, collection: [:Cat, :Dog]%>
           <%= f.input :size, collection: ['Small', 'Medium', 'Large'] %>
           <%= f.input :gender, collection: ['Male', 'Female'] %>
           <%= f.input :age, collection: ["Up to six months old", "Up to 2 years old", "Up to 5 years old", "More than 5 years old"]%>
