@@ -25,9 +25,9 @@
           <%= link_to 'Edit', edit_animal_path(@animal), class:"btn btn-green"%>
         <% end %>
 
-        <% if policy(@animal).rescue? %>
+        <% if !current_user.partner.nil? %>
           <%=  link_to "Rescue", rescue_path(@animal), method: :patch, class: "btn btn-blue" %>
-        <% elsif @animal.user == current_user || !current_user.partner.nil? %>
+        <% elsif @animal.user == current_user%>
         <% else %>
         <%= link_to "Adopt", animal_adoptions_path(@animal), method: :post, class: "btn btn-green"%>
         <% end %>
