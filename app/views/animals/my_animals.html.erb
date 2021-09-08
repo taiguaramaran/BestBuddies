@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-10 mx-5">
       <h1 class="my-4"><%="Hello, #{current_user.name}. " %></h1>
-      <h3 class="my-4">These are the buddies you are helping</h3>
+      <h3 class="my-4">These are the buddies you've helped</h3>
 
       <table class="table table-striped">
         <thead class="thead-dark">
@@ -10,15 +10,17 @@
             <th scope="col">Name</th>
             <th scope="col">Gender</th>
             <th scope="col">Size</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
 
         <% @animals.each do |animal| %>
           <tbody>
             <tr>
-              <td><%= link_to "#{animal.name}", animal_path(animal) %></td>
+              <td><%= animal.name %></td>
               <td><%= animal.gender %></td>
               <td><%= animal.size %></td>
+              <td><%=link_to "View", animal_path(animal), class:"message-card-button"  %></td>
             </tr>
           </tbody>
         <% end %>
