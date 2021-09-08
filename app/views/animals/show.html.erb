@@ -16,7 +16,7 @@
       <div class="links">
 
         <% if current_user.partner.nil? %>
-          <%= link_to 'My animals', my_animals_path(@animal), class:"btn btn-orange"%>
+          <%= link_to 'My buddies', my_animals_path(@animal), class:"btn btn-orange"%>
         <% else %>
           <%= link_to 'Back', root_path, class:"btn btn-orange"%>
         <% end %>
