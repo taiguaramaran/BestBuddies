@@ -6,6 +6,9 @@ class PagesController < ApplicationController
     @adoptions = Adoption.all.order(:created_at)
   end
 
+  def about
+  end
+
   def user_profile
     @user = current_user
   end

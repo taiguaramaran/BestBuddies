@@ -15,13 +15,22 @@ a {
 a:hover {
   text-decoration: none;
 }
-.container {
+.container-home {
   min-height: 100vh;
   width: 100%;
   //display: flex;
   //align-items: center;
   //justify-content: center;
 }
+
+.container-home {
+  min-height: 100vh;
+  width: 100%;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+
 img {
   height: 100%;
   width: 100%;
