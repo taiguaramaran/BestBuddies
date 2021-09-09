@@ -25,8 +25,8 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-import {initMenu} from '../menu/init_menu';
+
 
 document.addEventListener('turbolinks:load', () => {
-    initMenu()
+
 });
