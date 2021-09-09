@@ -1,27 +1,68 @@
-<div class="table-container mx-5 padding-default">
-    <div class="col-10 mx-5">
-      <h1 class="my-4"><%="Hello, #{@user.name}. " %></h1>
-      <h3 class="my-4">Check out the pets you adopted</h3>
 
-      <table class="table table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Size</th>
-          </tr>
-        </thead>
+  <h1 class="m-5 padding-default"><%="Hello, #{current_user.name}. " %></h1>
+  <h3 class="m-5"><i class="fas fa-paw"></i> These the animals you want to adopt.</h3>
+  <div class = "container-home ">
+    <div class ="row justify-content-center">
+      <% @user_adoption.each do |adoption| %>
 
-        <% @user_adoption.each do |adoption| %>
-          <tbody>
-            <tr>
-              <td><%= link_to "#{adoption.animal.name}", animal_path(adoption.animal) %></td>
-              <td><%= adoption.animal.gender %></td>
-              <td><%= adoption.animal.size %></td>
-            </tr>
-          </tbody>
-        <% end %>
-      </table>
-      <%= link_to 'Go back', root_path, class:'btn btn-orange mt-3' %>
-    </div>
-</div>
+      <div class="flex-sm-3">
+
+        <div class="container-grid">
+
+          <div class="card__new">
+
+            <div class="card__header">
+
+              <%= cl_image_tag adoption.animal.photos.first.key, class: "card__image"%>
+
+              <div class="card-details">
+
+                <h2 class ="card-title"> <%= adoption.animal.name.capitalize %> </h2>
+
+                <div class="card-metas">
+
+                  <div class="meta">
+                    <% if adoption.animal.category == 'Dog' %>
+                      <i class="fas fa-dog"></i>
+                    <% else %>
+                      <i class="fas fa-cat"></i>
+                    <% end %>
+                  </div>
+
+                  <div class="meta">
+                    <% if adoption.animal.gender == 'Male' %>
+                      <i class="fas fa-mars"></i>
+                    <% else %>
+                      <i class="fas fa-venus"></i>
+                    <% end %>
+                  </div>
+
+
+                </div> <!--card-metas ends-->
+
+              </div> <!--card-details ends-->
+
+            </div> <!--card__header ends-->
+
+          <div class="card__body">
+
+            <div class="card__category"><%= adoption.animal.breed.capitalize %></div>
+
+            <div class="card__description">
+              <p><%= adoption.animal.size %></p>
+            </div>
+
+            <%= link_to 'More', animal_path(adoption.animal), class: "button-card"%>
+
+          </div> <!--card__body ends-->
+
+          </div> <!--card ends-->
+
+        </div> <!--container-grid ends-->
+
+      </div> <!--flex sm1 ends-->
+
+<% end %>
+
+    </div> <!--row -->
+  </div>
