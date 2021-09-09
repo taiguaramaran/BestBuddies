@@ -19,20 +19,20 @@
       <div class="links">
 
         <% if current_user.partner.nil? %>
-          <%= link_to 'My buddies', my_animals_path(@animal), class:"btn btn-orange"%>
+          <%= link_to 'My buddies', my_animals_path(@animal), class:"btn-orange my-2"%>
         <% else %>
-          <%= link_to 'Back', root_path, class:"btn btn-orange"%>
+          <%= link_to 'Back', root_path, class:"btn-orange my-2"%>
         <% end %>
 
         <% if (@animal.user == current_user || @animal.partner == current_user.partner) %>
-          <%= link_to 'Edit', edit_animal_path(@animal), class:"btn btn-green"%>
+          <%= link_to 'Edit', edit_animal_path(@animal), class:"btn-green my-2"%>
         <% end %>
 
         <% if @animal.user == current_user || @animal.partner == current_user.partner%>
         <% elsif !current_user.partner.nil? %>
-          <%=  link_to "Rescue", rescue_path(@animal), method: :patch, class: "btn btn-blue" %>
+          <%=  link_to "Rescue", rescue_path(@animal), method: :patch, class: "btn-blue my-2" %>
         <% else %>
-        <%= link_to "Submit Application", animal_adoptions_path(@animal), method: :post, class: "btn btn-green"%>
+        <%= link_to "Submit Application", animal_adoptions_path(@animal), method: :post, class: "btn-green my-2"%>
         <% end %>
       </div>
     </div>
