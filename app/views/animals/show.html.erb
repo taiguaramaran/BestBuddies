@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container padding-default">
   <div class="box">
     <div class="box-img">
       <%= cl_image_tag (@animal.photos.first.key)%>
@@ -13,6 +13,9 @@
       <p class="pb-20 my-3"><strong>Gender</strong> "<%= @animal.gender %>"</p>
       <p class="pb-20 my-3"><strong>Age</strong> "<%= @animal.age %>"</p>
       <p class="pb-20 my-3"><strong>Comments</strong> <em><%= @animal.description %></em></p>
+      <% if @animal.partner %>
+        <p class="pb-20 my-3"><strong>Being cared for by</strong> <em><%= @animal.partner.name %></em></p>
+      <% end %>
       <div class="links">
 
         <% if current_user.partner.nil? %>

@@ -1,31 +1,9 @@
-<h1 class="section-title padding-default">My <span>B</span>uddies</h1>
-<div class="table-container mx-5 padding-default">
-  <div class="row">
-    <div class="col-10 mx-5">
-      <h1 class="my-4"><%="Hello, #{current_user.name}. " %></h1>
-      <h3 class="my-4"><i class="fas fa-paw"></i> These are all the buddies you've helped.</h3>
-      <table class="table table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Size</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
 
-        <% @animals.each do |animal| %>
-          <tbody>
-            <tr>
-              <td><%= animal.name %></td>
-              <td><%= animal.gender %></td>
-              <td><%= animal.size %></td>
-              <td><%=link_to "View", animal_path(animal), class:"btn-green"  %></td>
-            </tr>
-          </tbody>
-        <% end %>
-      </table>
-      <%= link_to 'Go back', root_path, class:'btn btn-orange mt-3' %>
-    </div>
+
+  <h1 class="m-5 padding-default"><%="Hello, #{current_user.name}. " %></h1>
+  <h3 class="m-5"><i class="fas fa-paw"></i> These are all the buddies you've helped.</h3>
+  <div class = "container-home ">
+    <div class ="row justify-content-center">
+      <%= render "shared/grids" %>
+    </div> <!--row -->
   </div>
-</div>
