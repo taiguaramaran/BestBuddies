@@ -1,48 +1,40 @@
-<div class="d-lg-flex half">
-  <div class="bg order-1 order-md-2"></div>
-  <div class="contents order-2 order-md-1">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-7 py-5">
-          <h1 class='form-title'> <i class="fas fa-dog"></i> SIGN UP</h2>
-            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), local: true)  do |f| %>
-              <%= f.error_notification %>
-              <div class="form-inputs">
-                <%= f.input :name,
-                              label: 'Full name',
-                              error: 'Name is mandatory, please specify one',
-                              required: true,
-                              autofocus: true,
-                              input_html: { autocomplete: "name" }%>
-                <%= f.input :age,
-                              required: true,
-                              autofocus: true,
-                              input_html: { autocomplete: "age" }%>
-                  <%= f.input :address,
-                              required: true,
-                              autofocus: true,
-                              input_html: { autocomplete: "address" }%>
-                  <%= f.input :email,
-                              required: true,
-                              autofocus: true,
-                              input_html: { autocomplete: "email" }%>
-                  <%= f.input :password,
-                              required: true,
-                              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                              input_html: { autocomplete: "new-password" } %>
-                  <%= f.input :password_confirmation,
-                              required: true,
-                              input_html: { autocomplete: "new-password" } %>
-                  <%= f.input :photo, as: :file %>
-                  <div class="form-actions">
-                    <%= f.button :submit, "Sign up", class:'btn btn-green'  %>
-                    <%= link_to 'Back', root_path, class:'btn btn-orange'%>
-                  </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-8 mb-5">
+      <h1 class='form-title'> <i class="fas fa-dog"></i> SIGN UP</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), local: true)  do |f| %>
+          <%= f.error_notification %>
+            <%= f.input :name,
+                          label: 'Full name',
+                          error: 'Name is mandatory, please specify one',
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "name" }%>
+            <%= f.input :age,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "age" }%>
+            <%= f.input :address,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "address" }%>
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }%>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :photo, as: :file %>
+
+            <%= f.button :submit, "Sign up", class:'btn btn-green'  %>
+            <%= link_to 'Back', root_path, class:'btn btn-orange'%>
+        <% end %>
     </div>
+    <div id="bg-image-sign-up" class="col-4"></div>
   </div>
 </div>
