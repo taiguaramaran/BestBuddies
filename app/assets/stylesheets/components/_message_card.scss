@@ -11,8 +11,9 @@
   background-image: image-url('message-card-bg.jpg');
   background-size: cover;
   padding: 10rem 0 0;
-  min-width: 200ch;
-  max-width: 250ch;
+  min-width: 150ch;
+  max-width: 200ch;
+  height: 400px;
   border-radius: 0.5rem;
   overflow: hidden;
 }
@@ -54,13 +55,15 @@
   display: inline-block;
   text-decoration: none;
   color: var(--clr-neutral-900);
-  background-color: var(--clr-accent-400);
+  background-color: var(--clr-neutral-100);
+  border: 3px solid crimson;
   padding: 0.5em 1.25em;
+  margin-right: 0.2em;
   border-radius: 0.25rem;
 }
 
 .message-card-button:hover,
 .message-card-button:focus {
   color: var(--clr-neutral-900);
-  background-color: var(--clr-neutral-100);
+  background-color: var(--clr-accent-400);
 }
