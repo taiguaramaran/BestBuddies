@@ -1,0 +1,37 @@
+<% @partners.each do |partner| %>
+    <div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-12">
+        <article class="blog-card">
+            <div class="blog-card__background">
+            <div class="card__background--wrapper">
+                <div class="card__background--main" style="background-image: url('../../assets/ngo-logo.jpg');">
+                <div class="card__background--layer"></div>
+                </div>
+            </div>
+            </div>
+            <div class="blog-card__head">
+            <span class="date__box">
+                <span class="date__day"><%=partner.animals.count%></span>
+                <span class="date__month">Buddies waiting for you</span>
+            </span>
+            </div>
+            <div class="blog-card__info">
+            <h1>
+                <%= partner.name %>
+            </h1>
+            <p><%= partner.address %></p>
+            <%= link_to partner_path(partner), class: "btn-blog btn-blog--with-icon" do %>
+            <i class="btn-icon fa fa-long-arrow-right"></i>READ MORE
+            <% end %>
+
+
+
+            
+
+            </div>
+        </article>
+        </div>
+    </div>
+    </div>
+<%end%>

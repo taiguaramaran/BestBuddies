@@ -29,7 +29,7 @@
         <% elsif !current_user.partner.nil? %>
           <%=  link_to "Rescue", rescue_path(@animal), method: :patch, class: "btn btn-blue" %>
         <% else %>
-        <%= link_to "Adopt", animal_adoptions_path(@animal), method: :post, class: "btn btn-green"%>
+        <%= link_to "Submit Application", animal_adoptions_path(@animal), method: :post, class: "btn btn-green"%>
         <% end %>
       </div>
     </div>
