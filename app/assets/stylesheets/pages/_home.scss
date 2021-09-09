@@ -49,6 +49,15 @@ p {
 .section-title span {
   color: crimson;
 }
+.section-title h2 {
+  color: black;
+  font-size: 1.4rem;
+  margin-top: 5px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  align-items: left;
+}
 
 .cta {
   display: inline-block;
