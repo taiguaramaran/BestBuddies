@@ -1,20 +1,77 @@
-<div class="container-fluid padding-default">
-  <div class="row align-items-center">
-    <div class="col-5">
-      <h1 class="section-title padding-default"><span><%= @partner.name[0] %></span><%= @partner.name[1..-1] %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1542297056134-df64a72eaeb7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
+  <div class="container">
+    <h1 class="section-title padding-default"><span><%= @partner.name[0] %></span><%= @partner.name[1..-1] %></h1>
       <br>
-      <h3 class="mb-3 text-center"><%= @partner.address %></h3>
-      <h3 class="mb-3 text-center"><%= @partner.email %></h3>
-      <h3 class="mb-3 text-center"><%= @partner.phone %></h3>
-      <% if @partner == current_user.partner %>
-        <%= link_to "Edit", edit_partner_path(@partner), class:'btn btn-green' %>
-        <%= link_to "Back", partners_path, class:'btn btn-orange' %>
-      <% end %>
-
-
-    </div>
-    <div class="col-7">
-      <%= render "shared/grids" %>
-    </div>
+      <h3 class="text-center text-white"><%= @partner.address %></h3>
+      <h3 class="text-center text-white"><%= @partner.email %></h3>
+      <h3 class="text-center text-white"><%= @partner.phone %></h3>
   </div>
 </div>
+<h2 class="section-title">Our <span>B</span>uddies waiting for you</h2>
+<div class = "container-home">
+  <div class ="row justify-content-center">
+
+    <% @partner_animals.each do |animal| %>
+
+      <div class="flex-sm-3">
+
+        <div class="container-grid">
+
+          <div class="card__new">
+
+            <div class="card__header">
+
+              <%= cl_image_tag animal.photos.first.key, class: "card__image"%>
+
+              <div class="card-details">
+
+                <h2 class ="card-title"> <%= animal.name.capitalize %> </h2>
+
+                <div class="card-metas">
+
+                  <div class="meta">
+                    <% if animal.category == 'Dog' %>
+                      <i class="fas fa-dog"></i>
+                    <% else %>
+                      <i class="fas fa-cat"></i>
+                    <% end %>
+                  </div>
+
+                  <div class="meta">
+                    <% if animal.gender == 'Male' %>
+                      <i class="fas fa-mars"></i>
+                    <% else %>
+                      <i class="fas fa-venus"></i>
+                    <% end %>
+                  </div>
+
+
+                </div> <!--card-metas ends-->
+
+              </div> <!--card-details ends-->
+
+            </div> <!--card__header ends-->
+
+          <div class="card__body">
+
+            <div class="card__category"><%= animal.breed.capitalize %></div>
+
+            <div class="card__description">
+              <p><%= animal.size %></p>
+            </div>
+
+            <%= link_to 'More', animal_path(animal), class: "button-card"%>
+
+          </div> <!--card__body ends-->
+
+          </div> <!--card ends-->
+
+        </div> <!--container-grid ends-->
+
+      </div> <!--flex sm1 ends-->
+    <% end %>
+  </div>
+</div> 
+
+
+
