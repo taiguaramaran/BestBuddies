@@ -1,6 +1,13 @@
-#bg-image-sign-up {
+#bg-image-cat {
   height: 100vh;
-  background-image: image-url('form-bg.jpg');
+  background-image: image-url('form-cat-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#bg-image-dog {
+  height: 100vh;
+  background-image: image-url('form-dog-bg.jpg');
   background-size: cover;
   background-position: center;
 }
