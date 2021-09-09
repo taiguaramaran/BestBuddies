@@ -1,24 +1,25 @@
-<div class="container border rounded bg-white my-5">
-  <div class="row">
-    <div class="col">
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-7">
         <h1> EDIT FORM </h1>
-        <%= simple_form_for (@animal) do |f| %>
+          <%= simple_form_for (@animal) do |f| %>
 
-          <%= f.input :name %>
-          <%= f.input :breed %>
-          <%= f.input :category, collection: [:CAT, :DOG] %>
-          <%= f.input :size %>
-          <%= f.input :gender %>
-          <%= f.input :age, collection: ["Até seis meses", "Até 2 anos", "Até 5 anos", "Mais que 5 anos"]%>
-          <%= f.submit "Update", class: "btn btn-blue" %>
+            <%= f.input :name %>
+            <%= f.input :breed %>
+            <%= f.input :category, collection: [:CAT, :DOG] %>
+            <%= f.input :size %>
+            <%= f.input :gender %>
+            <%= f.input :age, collection: ["Até seis meses", "Até 2 anos", "Até 5 anos", "Mais que 5 anos"]%>
+            <%= f.submit "Update", class: "btn btn-blue" %>
 
 
-        <% end %>
+          <% end %>
           <% if @animal.partner.nil? %>
             <%= link_to "Delete", animal_path(@animal), method: :delete,
                 data: { confirm: "Are you sure?" }, class: "btn btn-red" %>
           <% end %>
           <%= link_to 'Back', animals_path, class:"btn btn-orange"%>
     </div>
+    <div id="bg-image-dog" class="col-5"></div>
   </div>
 </div>
