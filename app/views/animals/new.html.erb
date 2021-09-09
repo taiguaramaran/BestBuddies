@@ -1,19 +1,20 @@
-<div class="container border rounded bg-white my-5">
-  <div class="row">
-    <div class="col">
-      <h1><i class="fas fa-paw"></i> Complete your buddy's profile </h1>
-      <%= simple_form_for (@animal) do |f| %>
-          <%= f.input :name %>
-          <%= f.input :breed %>
-          <%= f.input :category, collection: [:Cat, :Dog]%>
-          <%= f.input :size, collection: ['Small', 'Medium', 'Large'] %>
-          <%= f.input :gender, collection: ['Male', 'Female'] %>
-          <%= f.input :age, collection: ["Up to six months old", "Up to 2 years old", "Up to 5 years old", "More than 5 years old"]%>
-          <%= f.input :description %>
-          <%=  f.input :photos, as: :file, input_html: { multiple: true }%>
-          <%= f.submit "Register", class: "btn btn-blue" %>
-          <%= link_to "Back to home", root_path, class: "btn btn-orange" %>
-      <% end %>
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-7">
+      <h1 class='form-title'><i class="fas fa-paw"></i> COMPLETE YOUR BUDDY'S PROFILE </h1>
+        <%= simple_form_for (@animal) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :breed %>
+            <%= f.input :category, collection: [:Cat, :Dog]%>
+            <%= f.input :size, collection: ['Small', 'Medium', 'Large'] %>
+            <%= f.input :gender, collection: ['Male', 'Female'] %>
+            <%= f.input :age, collection: ["Up to six months old", "Up to 2 years old", "Up to 5 years old", "More than 5 years old"]%>
+            <%= f.input :description %>
+            <%=  f.input :photos, as: :file, input_html: { multiple: true }%>
+            <%= f.submit "Register", class: "btn btn-blue" %>
+            <%= link_to "Back to home", root_path, class: "btn btn-orange" %>
+        <% end %>
     </div>
+    <div id="bg-image-cat" class="col-5"></div>
   </div>
 </div>

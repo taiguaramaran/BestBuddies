@@ -3,18 +3,20 @@
     <div class="col-7">
       <h1 class="form-title"><i class="far fa-user"></i> LOGIN</h1>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= f.input :email,
-                    required: false,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" } %>
-        <%= f.input :password,
-                    required: false,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        <%= f.button :submit, "Log in", class: "btn btn-blue"%>
-        <%= render "devise/shared/links" %>
+
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.button :submit, "Log in", class: "btn btn-blue"%>
       <% end %>
+      <p>Don´t have an account yet?</p>
+      <%= render "devise/shared/links" %>
     </div>
-    <div id="bg-image-sign-up" class="col-5"></div>
+    <div id="bg-image-cat" class="col-5"></div>
   </div>
 </div>
