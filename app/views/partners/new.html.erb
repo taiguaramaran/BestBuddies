@@ -1,13 +1,15 @@
-<div class="container border bg-white my-5">
-  <div class="row">
-    <div class="col">
-      <h1 class=mb-3>New Partner's Profile</h1>
-      <%= simple_form_for(@partner) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.input :phone %>
-      <%= f.input :email%>
-      <%= f.submit %>
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-7">
+      <h1 class='form-title'>New Partner's Profile</h1>
+        <%= simple_form_for(@partner) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :phone %>
+        <%= f.input :email%>
+        <%= f.submit class:"btn-orange"%>
+    </div>
+    <div id="bg-image-dog" class="col-5"></div>
     <% end %>
     </div>
   </div>
