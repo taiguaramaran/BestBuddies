@@ -9,13 +9,15 @@ puts 'Creating Partners ...'
 angels_bark = Partner.new(name: 'Angels Bark Dog Rescue',
                           address: 'Beverly Hills, CA 90210',
                           email: 'angelsbarkdogrescue@gmail.com',
-                          phone: '888 667 5560')
+                          phone: '888 667 5560',
+                          description: 'Our mission is to connect the right people with the right animals')
 angels_bark.save!
 
 meow_animal_rescue = Partner.new(name: 'Meow Animal Rescue',
-                          address: 'Los Angeles, CA 90046',
-                          email: 'thecatsmeow@gmail.com',
-                          phone: '888 734 5569')
+                                 address: 'Los Angeles, CA 90046',
+                                 email: 'thecatsmeow@gmail.com',
+                                 phone: '888 734 5569',
+                                 description: 'Our desire is to improve animals lives')
 meow_animal_rescue.save!
 puts 'Partner created !!!'
 
