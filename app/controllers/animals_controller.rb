@@ -52,7 +52,7 @@ class AnimalsController < ApplicationController
     authorize @animal
     @animal.partner = current_user.partner
     @animal.save
-    redirect_to confirmation_path
+    redirect_to partner_path(current_user.partner)
   end
 
   def confirmation
